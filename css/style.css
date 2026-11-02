@@ -1,0 +1,49 @@
+/* --- Tipografías Editoriales --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+.font-sans {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Hero y Video Background --- */
+.hero-container {
+    background-color: #000;
+}
+#bg-video {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Nivel base: el video al fondo */
+}
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.65); /* Oscurece al 65% */
+    z-index: 2; /* Nivel medio: la capa oscura */
+}
+#hero-content {
+    z-index: 3; /* Nivel superior: el texto por encima de todo */
+    transition: opacity 0.5s ease-in-out;
+}
+/* --- Hero y Video Background --- */
+.hero-container {
+    background-color: #000;
+    /* Esto hace que el hero se quede "pegado" al fondo mientras hacés scroll */
+    position: sticky !important; 
+    top: 0;
+    z-index: 1; /* Nivel bajo */
+}
+
+/* ... (dejá las reglas de #bg-video, .hero-overlay y #hero-content como estaban) ... */
+
+/* --- Contenido Principal que tapa al video --- */
+main {
+    position: relative;
+    z-index: 10; /* Nivel alto: pasa por encima del hero */
+    background-color: #000000; /* Fondo negro sólido (después podés cambiarlo por una imagen) */
+    
+    /* Opcional: una sombra sutil arriba para que el corte no sea tan brusco */
+    box-shadow: 0px -15px 30px rgba(0, 0, 0, 0.9); 
+}
