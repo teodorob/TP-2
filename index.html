@@ -21,48 +21,69 @@
 </head>
 <body class="bg-dark text-light d-flex flex-column min-vh-100">
 
-    <!-- Navegación Principal -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-danger">
-        <div class="container">
-            <a class="navbar-brand font-serif fw-bold text-uppercase text-danger fs-4" href="index.html">
-                Patricio Rey
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto fs-6 font-sans">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Historia</a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="etapa-80.html">Etapa 80s (Gulp! a Oktubre)</a></li>
-                            <li><a class="dropdown-item" href="etapa-90-2000.html">Etapa 90s a 2000s</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Banda & Arte</a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="integrantes.html">Integrantes</a></li>
-                            <li><a class="dropdown-item" href="arte-rocambole.html">Arte de Rocambole</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cultura</a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
-                            <li><a class="dropdown-item" href="legado-influencia.html">Legado e Influencia</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="creditos.html">Créditos</a></li>
-                </ul>
-            </div>
+   <!-- Navegación Principal -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-danger">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-uppercase text-danger fs-4" href="index.html">
+            Patricio Rey
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto fs-6">
+                <!-- Inicio -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                
+                <!-- Sección 1: Historia -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Historia
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="gulp.html">Gulp! (1985)</a></li>
+                        <li><a class="dropdown-item" href="oktubre.html">Oktubre (1986)</a></li>
+                        <li><a class="dropdown-item" href="noventas.html">Los 90s</a></li>
+                        <li><a class="dropdown-item" href="disolucion.html">Disolución</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 2: Banda & Arte -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Banda & Arte
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="integrantes.html">Integrantes</a></li>
+                        <li><a class="dropdown-item" href="rocambole.html">Arte de Rocambole</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sección 3: Cultura & Identidad -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cultura & Identidad
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
+                        <li><a class="dropdown-item" href="identidad.html">Identidad e Influencia</a></li>
+                    </ul>
+                </li>
+
+                <!-- Páginas del sistema -->
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="creditos.html">Créditos</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Header / Hero Section con Video de Fondo -->
     <header class="hero-container vh-100 position-relative overflow-hidden d-flex align-items-center justify-content-center text-center border-bottom border-danger">
