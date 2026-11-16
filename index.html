@@ -4,196 +4,541 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patricio Rey y sus Redonditos de Ricota | Inicio</title>
-    
-    <!-- Google Fonts: Editorial Serif y Sans-Serif -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Animate.css para animaciones de entrada -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
-    <!-- Bootstrap 5 CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Badeen+Display&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+
+    <!-- Lenis (scroll suave) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.css">
+
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-dark text-light d-flex flex-column min-vh-100">
+<body>
 
-   <!-- Navegación Principal -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-danger">
-    <div class="container">
-        <a class="navbar-brand fw-bold text-uppercase text-danger fs-4" href="index.html">
-            Patricio Rey
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto fs-6">
-                <!-- Inicio -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
-                </li>
-                
-                <!-- Sección 1: Historia -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Historia
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="gulp.html">Gulp! (1985)</a></li>
-                        <li><a class="dropdown-item" href="oktubre.html">Oktubre (1986)</a></li>
-                        <li><a class="dropdown-item" href="noventas.html">Los 90s</a></li>
-                        <li><a class="dropdown-item" href="disolucion.html">Disolución</a></li>
-                    </ul>
-                </li>
+    <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
 
-                <!-- Sección 2: Banda & Arte -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Banda & Arte
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="integrantes.html">Integrantes</a></li>
-                        <li><a class="dropdown-item" href="rocambole.html">Arte de Rocambole</a></li>
-                    </ul>
-                </li>
-
-                <!-- Sección 3: Cultura & Identidad -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Cultura & Identidad
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
-                        <li><a class="dropdown-item" href="identidad.html">Identidad e Influencia</a></li>
-                    </ul>
-                </li>
-
-                <!-- Páginas del sistema -->
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="creditos.html">Créditos</a>
-                </li>
-            </ul>
-        </div>
+    <!-- Cortina de transición -->
+    <div class="curtain" aria-hidden="true">
+        <div class="curtain__layer curtain__layer--rojo"></div>
+        <div class="curtain__layer curtain__layer--negro"><span class="curtain__label">Inicio</span></div>
     </div>
-</nav>
 
-    <!-- Header / Hero Section con Video de Fondo -->
-    <header class="hero-container vh-100 position-relative overflow-hidden d-flex align-items-center justify-content-center text-center border-bottom border-danger">
-        <!-- Video de Fondo -->
-        <video autoplay muted loop playsinline id="bg-video" class="position-absolute w-100 h-100 object-fit-cover">
-            <source src="assets/video/intro-redondos.mp4" type="video/mp4">
-            Tu navegador no soporta video HTML5.
-        </video>
+    <!-- Navegación Principal (fija) -->
+    <nav class="navbar navbar-expand-lg fixed-top nav-pr" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-pr__logo" href="index.html" data-label="Inicio">
+                <img src="img/logo.png" alt="Patricio Rey" width="600" height="600">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- Overlay oscuro para alto contraste -->
-        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Inicio -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
 
-        <!-- Contenido animado (Oculto inicialmente con opacity-0) -->
-        <div id="hero-content" class="container position-relative z-3 text-light opacity-0">
-            <h1 class="display-2 font-serif text-uppercase text-light mb-3">
-                Patricio Rey y sus Redonditos de Ricota
-            </h1>
-            <p class="lead text-light fs-4 max-w-xl mx-auto mb-4 font-sans">
-                Un recorrido biográfico e iconográfico por la banda de rock independiente más importante de la Argentina.
-            </p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="etapa-80.html" class="btn btn-danger btn-lg px-4">Comenzar Historia</a>
-                <a href="arte-rocambole.html" class="btn btn-outline-light btn-lg px-4">Ver Arte Visual</a>
+                    <!-- Sección 1: Historia -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Historia
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="gulp.html">Gulp! (1985)</a></li>
+                            <li><a class="dropdown-item" href="oktubre.html">Oktubre (1986)</a></li>
+                            <li><a class="dropdown-item" href="noventas.html">Los 90s</a></li>
+                            <li><a class="dropdown-item" href="disolucion.html">Disolución</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Sección 2: Banda & Arte -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Banda &amp; Arte
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="integrantes.html">Integrantes</a></li>
+                            <li><a class="dropdown-item" href="rocambole.html">Arte de Rocambole</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Sección 3: Cultura & Identidad -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cultura &amp; Identidad
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
+                            <li><a class="dropdown-item" href="identidad.html">Identidad e Influencia</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Páginas del sistema -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="creditos.html">Créditos</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Contenido Principal -->
-    <main class="container py-5 flex-grow-1 font-sans">
-        
-        <!-- Resumen Introductorio -->
-        <section class="row align-items-center mb-5 g-4">
-            <div class="col-lg-7">
-                <h2 class="h1 font-serif text-danger mb-3">La Mística e Independencia</h2>
-                <p class="fs-5 text-light">
-                    Surgida en La Plata a fines de la década de 1970, la banda transformó de manera irreversible la cultura musical argentina. Guiados por la independencia discográfica y la autogestión, crearon un universo poético, sonoro y visual sin precedentes.
+    <main id="contenido">
+
+        <!-- HERO · rojo / negro -->
+        <header class="sec hero" data-theme="rojo" data-intro data-layer data-hold="40">
+            <div class="container-fluid">
+                <h1 class="hero__title t-display" data-fit-box>
+                    <span class="line"><span class="misreg" data-text="Patricio" data-fit>Patricio</span></span>
+                    <span class="hero__row">
+                        <span class="hero__media" aria-hidden="true">
+                            <video autoplay muted loop playsinline preload="metadata">
+                                <source src="assets/video/intro-redondos.mp4" type="video/mp4">
+                            </video>
+                        </span>
+                        <span class="line"><span class="misreg" data-text="Rey">Rey</span></span>
+                    </span>
+                    <span class="hero__sub" data-intro-fade>y sus Redonditos de Ricota</span>
+                </h1>
+
+                <div class="hero__meta" data-intro-fade>
+                    <div class="row gy-4 align-items-start">
+                        <div class="col-md-7">
+                            <p class="t-lead">Un recorrido biográfico e iconográfico por la banda de rock independiente más importante de la Argentina.</p>
+                        </div>
+                        <div class="col-md-5 hero__links">
+                            <a href="gulp.html" class="btn-pr btn-pr--fill" data-label="Gulp! (1985)">Comenzar Historia</a>
+                            <a href="rocambole.html" class="btn-pr" data-label="Arte de Rocambole">Ver Arte Visual</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- BARRA AMARILLA · bucle infinito -->
+        <section class="sec marquee" data-theme="amarillo" data-marquee data-speed="45" aria-label="Patricio Rey y sus Redonditos de Ricota">
+            <div class="marquee__track">
+                <p class="marquee__group">
+                    <span>Patricio Rey y sus Redonditos de Ricota</span><span class="redondo"></span>
+                    <span>Historia y Trayectoria</span><span class="redondo"></span>
+                    <span>Banda y Arte Visual</span><span class="redondo"></span>
+                    <span>Fenómeno y Legado</span><span class="redondo"></span>
                 </p>
-                <p class="fs-5 text-secondary">
-                    Bajo el liderazgo del Indio Solari, Skay Beilinson, la gestión de La Negra Poli y la identidad visual de Rocambole, Los Redondos pasaron del under teatral a llenar estadios en las míticas "Misas Ricoteras".
+                <p class="marquee__group" aria-hidden="true">
+                    <span>Patricio Rey y sus Redonditos de Ricota</span><span class="redondo"></span>
+                    <span>Historia y Trayectoria</span><span class="redondo"></span>
+                    <span>Banda y Arte Visual</span><span class="redondo"></span>
+                    <span>Fenómeno y Legado</span><span class="redondo"></span>
                 </p>
             </div>
-            <div class="col-lg-5">
-                <div class="p-4 bg-black border border-secondary rounded text-center">
-                    <img src="assets/img/hero-redondos.jpg" alt="Patricio Rey y sus Redonditos de Ricota" class="img-fluid rounded mb-2 shadow" onerror="this.src='https://via.placeholder.com/500x300/111/dc3545?text=Patricio+Rey'">
-                    <small class="text-secondary d-block mt-2">Fotografía emblemática de la banda.</small>
-                </div>
-            </div>
         </section>
 
-        <hr class="border-secondary my-5">
-
-        <!-- Explorar las Secciones Principales -->
-        <section class="mb-5">
-            <h2 class="h2 font-serif text-center text-uppercase text-danger mb-4">Secciones Destacadas</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card bg-black text-light border-secondary h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="h4 font-serif card-title text-danger">Historia y Trayectoria</h3>
-                            <p class="card-text text-secondary flex-grow-1">
-                                Desde las primeras experiencias psicodélicas y los álbumes fundamentales de los 80 hasta la masividad de los 90 y su disolución en 2001.
-                            </p>
-                            <a href="gulp.html" class="btn btn-outline-danger w-100 mt-3">Ver Historia &rarr;</a>
-                        </div>
+        <!-- LA MÍSTICA · negro / crema -->
+        <section class="sec mistica" data-theme="negro" data-words-pin data-layer data-hold="150">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-center">
+                    <div class="col-lg-7">
+                        <h2 class="t-titulo mistica__h">La Mística e Independencia</h2>
+                        <p class="mistica__txt" data-words>Surgida en La Plata a fines de la década de 1970, la banda transformó de manera irreversible la cultura musical argentina. Guiados por la independencia discográfica y la autogestión, crearon un universo poético, sonoro y visual sin precedentes.</p>
+                        <p class="mistica__sub">Bajo el liderazgo del Indio Solari, Skay Beilinson, la gestión de La Negra Poli y la identidad visual de Rocambole, Los Redondos pasaron del under teatral a llenar estadios en las míticas "Misas Ricoteras".</p>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card bg-black text-light border-secondary h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="h4 font-serif card-title text-danger">Banda y Arte Visual</h3>
-                            <p class="card-text text-secondary flex-grow-1">
-                                Conocé a los integrantes fundacionales y la obra gráfica de Rocambole, creador de las portadas e identidad lírica de Patricio Rey.
-                            </p>
-                            <a href="rocambole.html" class="btn btn-outline-danger w-100 mt-3">Explorar Arte &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card bg-black text-light border-secondary h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="h4 font-serif card-title text-danger">Fenómeno y Legado</h3>
-                            <p class="card-text text-secondary flex-grow-1">
-                                Un análisis sobre el ritual de las "Misas Ricoteras", la devoción popular y el impacto imborrable de su música en las nuevas generaciones.
-                            </p>
-                            <a href="fenomeno-misas.html" class="btn btn-outline-danger w-100 mt-3">Ver Fenómeno &rarr;</a>
-                        </div>
+                    <div class="col-lg-4 offset-lg-1">
+                        <figure>
+                            <div class="mistica__img">
+                                <img src="img/archivo/showColor.jpg" alt="Patricio Rey y sus Redonditos de Ricota">
+                            </div>
+                            <figcaption>Fotografía emblemática de la banda.</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Cita Destacada -->
-        <section class="bg-black border-start border-4 border-danger p-4 p-md-5 my-5 rounded-end">
-            <blockquote class="blockquote mb-0">
-                <p class="fs-4 italic text-light mb-3">"Violenta belleza, la risa que rasga el telón..."</p>
-                <footer class="blockquote-footer text-secondary">Frase del universo lírico de <cite title="Source Title">Patricio Rey</cite></footer>
-            </blockquote>
+        <!-- RECORRIDO · rojo / negro, línea de tiempo -->
+        <section class="sec recorrido" data-theme="rojo" id="recorrido" data-layer data-hold="70">
+            <div class="container-fluid">
+                <h2 class="t-titulo t-h2">Secciones Destacadas</h2>
+
+                <div class="row recorrido__intro gy-4 align-items-end">
+                    <div class="col-lg-7">
+                        <h3 class="t-titulo recorrido__h3">Historia y Trayectoria</h3>
+                        <p class="t-lead">Desde las primeras experiencias psicodélicas y los álbumes fundamentales de los 80 hasta la masividad de los 90 y su disolución en 2001.</p>
+                    </div>
+                    <div class="col-lg-5 text-lg-end">
+                        <a href="gulp.html" class="btn-pr" data-label="Gulp! (1985)">Ver Historia &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="timeline" data-timeline>
+                    <div class="timeline__rail" aria-hidden="true"><span class="timeline__fill"></span></div>
+
+                    <article class="hito">
+                        <span class="hito__dot" aria-hidden="true"></span>
+                        <div class="row gy-3 hito__body">
+                            <div class="col-md-3"><span class="hito__year">1984 - 1985</span></div>
+                            <div class="col-md-6">
+                                <h4 class="hito__title"><a href="gulp.html">Gulp! (1985)</a></h4>
+                                <p class="hito__lead">El origen del mito: del underground en los pubs a la fundación del rock independiente argentino.</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="hito__img trama duotono"><img src="img/portadas/gulp.jpg" alt="Portada del álbum Gulp! (1985)" loading="lazy"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="hito">
+                        <span class="hito__dot" aria-hidden="true"></span>
+                        <div class="row gy-3 hito__body">
+                            <div class="col-md-3"><span class="hito__year">1986</span></div>
+                            <div class="col-md-6">
+                                <h4 class="hito__title"><a href="oktubre.html">Oktubre (1986)</a></h4>
+                                <p class="hito__lead">El mito, la vanguardia y el manifiesto ideológico del rock argentino.</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="hito__img trama duotono"><img src="img/portadas/oktubre.jpg" alt="Portada del álbum Oktubre (1986)" loading="lazy"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="hito">
+                        <span class="hito__dot" aria-hidden="true"></span>
+                        <div class="row gy-3 hito__body">
+                            <div class="col-md-3"><span class="hito__year">1990 - 2000</span></div>
+                            <div class="col-md-6">
+                                <h4 class="hito__title"><a href="noventas.html">Los 90s</a></h4>
+                                <p class="hito__lead">La década del estallido popular, la consagración discográfica en estadios y el fenómeno de las peregrinaciones por el país.</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="hito__img trama duotono"><img src="img/portadas/lamosca.jpg" alt="Tapa de La mosca y la sopa (1991)" loading="lazy"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="hito">
+                        <span class="hito__dot" aria-hidden="true"></span>
+                        <div class="row gy-3 hito__body">
+                            <div class="col-md-3"><span class="hito__year">1998 - 2001</span></div>
+                            <div class="col-md-6">
+                                <h4 class="hito__title"><a href="disolucion.html">Disolución</a></h4>
+                                <p class="hito__lead">El viraje electrónico, la fractura creativa y la sorpresiva separación tras más de dos décadas en la ruta.</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="hito__img trama duotono"><img src="img/portadas/momosampler.jpg" alt="Tapa de Momo Sampler (2000)" loading="lazy"></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
+
+        <!-- SOLAPAS · amarillo / negro -->
+        <section class="sec destacadas" data-theme="amarillo" data-layer data-hold="80">
+            <div class="container-fluid">
+                <ul class="tabs-pr" role="tablist" data-tabs>
+                    <li role="presentation">
+                        <button class="tabs-pr__btn active" id="tab-banda" data-bs-toggle="tab" data-bs-target="#panel-banda" type="button" role="tab" aria-controls="panel-banda" aria-selected="true">Banda y Arte Visual</button>
+                    </li>
+                    <li role="presentation">
+                        <button class="tabs-pr__btn" id="tab-fenomeno" data-bs-toggle="tab" data-bs-target="#panel-fenomeno" type="button" role="tab" aria-controls="panel-fenomeno" aria-selected="false" tabindex="-1">Fenómeno y Legado</button>
+                    </li>
+                    <li class="tabs-pr__bar" aria-hidden="true"></li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- Banda y Arte Visual -->
+                    <div class="tab-pane fade show active" id="panel-banda" role="tabpanel" aria-labelledby="tab-banda" tabindex="0">
+                        <h3 class="visually-hidden">Banda y Arte Visual</h3>
+                        <div class="row gy-5">
+                            <div class="col-lg-4 pane-intro">
+                                <p class="t-lead">Conocé a los integrantes fundacionales y la obra gráfica de Rocambole, creador de las portadas e identidad lírica de Patricio Rey.</p>
+                                <a href="rocambole.html" class="btn-pr" data-label="Arte de Rocambole">Explorar Arte &rarr;</a>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="row gy-5">
+                                    <div class="col-md-6" data-pane-item>
+                                        <a class="pane-item" href="integrantes.html">
+                                            <span class="pane-item__img trama duotono"><img src="img/archivo/poli.jpg" alt="Skay Beilinson, La Negra Poli e Indio Solari" loading="lazy"></span>
+                                            <span class="pane-item__title">Integrantes</span>
+                                            <span class="pane-item__lead">El tridente fundacional, la formación clásica y los músicos históricos que construyeron el mito de Patricio Rey.</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6" data-pane-item>
+                                        <a class="pane-item" href="rocambole.html">
+                                            <span class="pane-item__img trama duotono"><img src="img/portadas/bang.jpg" alt="Tapa de ¡Bang! ¡Bang! Estás liquidado, obra de Rocambole" loading="lazy"></span>
+                                            <span class="pane-item__title">Arte de Rocambole</span>
+                                            <span class="pane-item__lead">Ricardo Cohen: el sexto sabio detrás de la identidad visual de Patricio Rey y sus Redonditos de Ricota.</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fenómeno y Legado -->
+                    <div class="tab-pane fade" id="panel-fenomeno" role="tabpanel" aria-labelledby="tab-fenomeno" tabindex="0">
+                        <h3 class="visually-hidden">Fenómeno y Legado</h3>
+                        <div class="row gy-5">
+                            <div class="col-lg-4 pane-intro">
+                                <p class="t-lead">Un análisis sobre el ritual de las "Misas Ricoteras", la devoción popular y el impacto imborrable de su música en las nuevas generaciones.</p>
+                                <a href="fenomeno-misas.html" class="btn-pr" data-label="Las Misas Ricoteras">Ver Fenómeno &rarr;</a>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="row gy-5">
+                                    <div class="col-md-6" data-pane-item>
+                                        <a class="pane-item" href="fenomeno-misas.html">
+                                            <span class="pane-item__img trama duotono"><img src="img/archivo/showColor.jpg" alt="Recital de Los Redondos frente a una multitud" loading="lazy"></span>
+                                            <span class="pane-item__title">Las Misas Ricoteras</span>
+                                            <span class="pane-item__lead">El ritual, la peregrinación y la comunión inquebrantable entre Patricio Rey y sus bandas.</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6" data-pane-item>
+                                        <a class="pane-item" href="identidad.html">
+                                            <span class="pane-item__img trama duotono"><img src="img/portadas/lobosuelto.jpg" alt="Tapa de Lobo suelto, edición independiente" loading="lazy"></span>
+                                            <span class="pane-item__title">Identidad e Influencia</span>
+                                            <span class="pane-item__lead">El impacto social de la autogestión, el quiebre institucional y la influencia imborrable en el rock nacional.</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIN SELLO · La Negra Poli de fondo completo -->
+        <section class="sec foto" data-theme="crema" data-layer data-hold="70" aria-label="La Negra Poli">
+            <div class="container-fluid">
+                <div class="row gy-4 align-items-end">
+                    <div class="col-lg-6">
+                        <h2 class="t-titulo foto__h">
+                            <span data-slide="left">Sin sello.</span>
+                            <span data-slide="left" data-delay=".15">Sin auspiciantes.</span>
+                            <span data-slide="left" data-delay=".3">Sin explicaciones.</span>
+                        </h2>
+                    </div>
+                    <div class="col-lg-4 offset-lg-2">
+                        <div class="foto__nota" data-slide="right" data-delay=".35">
+                            <p>Durante veinticinco años, La Negra Poli gestionó cada disco, cada show y cada afiche por fuera de la industria. Así llenaron estadios sin pedirle permiso a nadie.</p>
+                            <a class="lnk" href="identidad.html" data-label="Identidad e Influencia">Leer sobre la autogestión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DISCOGRAFÍA · rojo / negro, carrusel continuo -->
+        <section class="sec disco" data-theme="rojo" data-layer data-hold="80" data-carousel data-speed="38">
+            <div class="container-fluid disco__head">
+                <h2 class="t-titulo t-h2">Discografía</h2>
+                <p class="t-lead">Nueve discos de estudio, de Gulp! a Momo Sampler.</p>
+            </div>
+
+            <div class="disco__viewport">
+                <div class="disco__track">
+                    <div class="disco__group">
+                        <a class="disco__item" href="gulp.html" data-label="Gulp! (1985)">
+                            <span class="disco__year">1985</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph" aria-hidden="true">Gulp!</span><img src="img/portadas/gulp.jpg" alt="Tapa de Gulp!" loading="lazy"></span>
+                            <span class="disco__name">Gulp!</span>
+                        </a>
+                        <a class="disco__item" href="oktubre.html" data-label="Oktubre (1986)">
+                            <span class="disco__year">1986</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph" aria-hidden="true">Oktubre</span><img src="img/portadas/oktubre.jpg" alt="Tapa de Oktubre" loading="lazy"></span>
+                            <span class="disco__name">Oktubre</span>
+                        </a>
+                        <a class="disco__item" href="rocambole.html" data-label="Arte de Rocambole">
+                            <span class="disco__year">1988</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph" aria-hidden="true">Un baión para el ojo idiota</span><img src="img/portadas/unbaion.jpg" alt="Tapa de Un baión para el ojo idiota" loading="lazy"></span>
+                            <span class="disco__name">Un baión para el ojo idiota</span>
+                        </a>
+                        <a class="disco__item" href="rocambole.html" data-label="Arte de Rocambole">
+                            <span class="disco__year">1989</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph" aria-hidden="true">¡Bang! ¡Bang! Estás liquidado</span><img src="img/portadas/bang.jpg" alt="Tapa de ¡Bang! ¡Bang! Estás liquidado" loading="lazy"></span>
+                            <span class="disco__name">¡Bang! ¡Bang! Estás liquidado</span>
+                        </a>
+                        <a class="disco__item" href="noventas.html" data-label="Los 90s">
+                            <span class="disco__year">1991</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph" aria-hidden="true">La mosca y la sopa</span><img src="img/portadas/lamosca.jpg" alt="Tapa de La mosca y la sopa" loading="lazy"></span>
+                            <span class="disco__name">La mosca y la sopa</span>
+                        </a>
+                        <a class="disco__item" href="noventas.html" data-label="Los 90s">
+                            <span class="disco__year">1993</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph" aria-hidden="true">Lobo suelto</span><img src="img/portadas/lobosuelto.jpg" alt="Tapa de Lobo suelto" loading="lazy"></span>
+                            <span class="disco__name">Lobo suelto</span>
+                        </a>
+                        <a class="disco__item" href="noventas.html" data-label="Los 90s">
+                            <span class="disco__year">1993</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph" aria-hidden="true">Cordero atado</span><img src="img/portadas/corderoatado.jpg" alt="Tapa de Cordero atado" loading="lazy"></span>
+                            <span class="disco__name">Cordero atado</span>
+                        </a>
+                        <a class="disco__item" href="noventas.html" data-label="Los 90s">
+                            <span class="disco__year">1996</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph" aria-hidden="true">Luzbelito</span><img src="img/portadas/luzbelito.jpg" alt="Tapa de Luzbelito" loading="lazy"></span>
+                            <span class="disco__name">Luzbelito</span>
+                        </a>
+                        <a class="disco__item" href="disolucion.html" data-label="Disolución">
+                            <span class="disco__year">1998</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph" aria-hidden="true">Último bondi a Finisterre</span><img src="img/portadas/ultimobondi.jpg" alt="Tapa de Último bondi a Finisterre" loading="lazy"></span>
+                            <span class="disco__name">Último bondi a Finisterre</span>
+                        </a>
+                        <a class="disco__item" href="disolucion.html" data-label="Disolución">
+                            <span class="disco__year">2000</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph" aria-hidden="true">Momo Sampler</span><img src="img/portadas/momosampler.jpg" alt="Tapa de Momo Sampler" loading="lazy"></span>
+                            <span class="disco__name">Momo Sampler</span>
+                        </a>
+                    </div>
+
+                    <!-- Copia para el bucle continuo -->
+                    <div class="disco__group" aria-hidden="true" inert>
+                        <a class="disco__item" href="gulp.html" data-label="Gulp! (1985)">
+                            <span class="disco__year">1985</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph">Gulp!</span><img src="img/portadas/gulp.jpg" alt="" loading="lazy"></span>
+                            <span class="disco__name">Gulp!</span>
+                        </a>
+                        <a class="disco__item" href="oktubre.html" data-label="Oktubre (1986)">
+                            <span class="disco__year">1986</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph">Oktubre</span><img src="img/portadas/oktubre.jpg" alt="" loading="lazy"></span>
+                            <span class="disco__name">Oktubre</span>
+                        </a>
+                        <a class="disco__item" href="rocambole.html" data-label="Arte de Rocambole">
+                            <span class="disco__year">1988</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph">Un baión para el ojo idiota</span><img src="img/portadas/unbaion.jpg" alt="" loading="lazy"></span>
+                            <span class="disco__name">Un baión para el ojo idiota</span>
+                        </a>
+                        <a class="disco__item" href="rocambole.html" data-label="Arte de Rocambole">
+                            <span class="disco__year">1989</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph">¡Bang! ¡Bang! Estás liquidado</span><img src="img/portadas/bang.jpg" alt="" loading="lazy"></span>
+                            <span class="disco__name">¡Bang! ¡Bang! Estás liquidado</span>
+                        </a>
+                        <a class="disco__item" href="noventas.html" data-label="Los 90s">
+                            <span class="disco__year">1991</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph">La mosca y la sopa</span><img src="img/portadas/lamosca.jpg" alt="" loading="lazy"></span>
+                            <span class="disco__name">La mosca y la sopa</span>
+                        </a>
+                        <a class="disco__item" href="noventas.html" data-label="Los 90s">
+                            <span class="disco__year">1993</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph">Lobo suelto</span><img src="img/portadas/lobosuelto.jpg" alt="" loading="lazy"></span>
+                            <span class="disco__name">Lobo suelto</span>
+                        </a>
+                        <a class="disco__item" href="noventas.html" data-label="Los 90s">
+                            <span class="disco__year">1993</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph">Cordero atado</span><img src="img/portadas/corderoatado.jpg" alt="" loading="lazy"></span>
+                            <span class="disco__name">Cordero atado</span>
+                        </a>
+                        <a class="disco__item" href="noventas.html" data-label="Los 90s">
+                            <span class="disco__year">1996</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph">Luzbelito</span><img src="img/portadas/luzbelito.jpg" alt="" loading="lazy"></span>
+                            <span class="disco__name">Luzbelito</span>
+                        </a>
+                        <a class="disco__item" href="disolucion.html" data-label="Disolución">
+                            <span class="disco__year">1998</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph">Último bondi a Finisterre</span><img src="img/portadas/ultimobondi.jpg" alt="" loading="lazy"></span>
+                            <span class="disco__name">Último bondi a Finisterre</span>
+                        </a>
+                        <a class="disco__item" href="disolucion.html" data-label="Disolución">
+                            <span class="disco__year">2000</span>
+                            <span class="disco__cover trama-negra"><span class="disco__ph">Momo Sampler</span><img src="img/portadas/momosampler.jpg" alt="" loading="lazy"></span>
+                            <span class="disco__name">Momo Sampler</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EL POGO · video de fondo -->
+        <section class="sec pogo" data-theme="negro" data-layer data-hold="60">
+            <div class="pogo__video" aria-hidden="true">
+                <!-- Reemplazar src por la ruta del video del pogo -->
+                <video autoplay muted loop playsinline preload="metadata" poster="img/archivo/showColor.jpg">
+                    <source src="assets/video/pogo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="pogo__overlay" aria-hidden="true"></div>
+
+            <div class="container-fluid">
+                <h2 class="t-display pogo__h" data-misreg-scroll>
+                    <span class="line"><span class="misreg" data-text="El pogo">El pogo</span></span>
+                    <span class="line"><span class="misreg" data-text="más grande">más grande</span></span>
+                    <span class="line"><span class="misreg" data-text="del mundo">del mundo</span></span>
+                </h2>
+                <div class="pogo__foot">
+                    <p class="pogo__txt">Así llamó el Indio al cierre de cada show: decenas de miles saltando a la vez cuando empezaba Jijiji.</p>
+                    <a class="lnk" href="fenomeno-misas.html" data-label="Las Misas Ricoteras">Las misas ricoteras</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer Compartido -->
-    <footer class="py-4 bg-black border-top border-secondary text-center text-secondary mt-auto font-sans">
-        <div class="container">
-            <p class="mb-1">Informática General 2026 - Cátedra Drelichman</p>
-            <p class="small mb-0">Trabajo Práctico N° 2 | Sitio Web sobre Patricio Rey y sus Redonditos de Ricota</p>
+    <footer class="sec pie" data-theme="negro" data-layer>
+        <div class="container-fluid">
+            <div class="row gy-4">
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Historia</p>
+                    <ul>
+                        <li><a href="gulp.html">Gulp! (1985)</a></li>
+                        <li><a href="oktubre.html">Oktubre (1986)</a></li>
+                        <li><a href="noventas.html">Los 90s</a></li>
+                        <li><a href="disolucion.html">Disolución</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Banda &amp; Arte</p>
+                    <ul>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                        <li><a href="rocambole.html">Arte de Rocambole</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Cultura &amp; Identidad</p>
+                    <ul>
+                        <li><a href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
+                        <li><a href="identidad.html">Identidad e Influencia</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label" aria-hidden="true">&nbsp;</p>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="creditos.html">Créditos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pie__meta">
+                <div class="row gy-2 align-items-start">
+                    <div class="col-md-5"><p class="mb-1">Informática General 2026 - Cátedra Drelichman</p></div>
+                    <div class="col-md-5"><p class="small mb-0">Trabajo Práctico N° 2 | Sitio Web sobre Patricio Rey y sus Redonditos de Ricota</p></div>
+                    <div class="col-md-2 text-md-end"><button class="pie__top" type="button" data-top>Volver arriba</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie__markbox" data-fit-box aria-hidden="true">
+            <span class="t-display" data-fit>Patricio Rey</span>
         </div>
     </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <!-- Animaciones -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+    <script src="java/java.js"></script>
 </body>
 </html>
