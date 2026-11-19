@@ -3,62 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Los Años 90 | Patricio Rey</title>
-    
-    <!-- Framework CSS (Bootstrap 5 CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="bg-dark text-light d-flex flex-column min-vh-100">
+    <title>Los 90s (1991–1996) | Patricio Rey y sus Redonditos de Ricota</title>
+    <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Navegación Principal -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-danger">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-uppercase text-danger fs-4" href="index.html">
-                Patricio Rey
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Badeen+Display&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Lenis (scroll suave) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.css">
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
+
+    <!-- Cortina de transición -->
+    <div class="curtain" aria-hidden="true">
+        <div class="curtain__layer curtain__layer--rojo"></div>
+        <div class="curtain__layer curtain__layer--negro"><span class="curtain__label">Los 90s</span></div>
+    </div>
+
+    <!-- Navegación Principal (fija) -->
+    <nav class="navbar navbar-expand-lg fixed-top nav-pr" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-pr__logo" href="index.html" data-label="Inicio">
+                <img src="img/logo.png" alt="Patricio Rey" width="600" height="600">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto fs-6">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
-                    
-                    <!-- Sección 1: Historia -->
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Historia
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="gulp.html">Gulp! (1985)</a></li>
                             <li><a class="dropdown-item" href="oktubre.html">Oktubre (1986)</a></li>
-                            <li><a class="dropdown-item active" href="noventas.html">Los 90s</a></li>
+                            <li><a class="dropdown-item active" href="noventas.html" aria-current="page">Los 90s</a></li>
                             <li><a class="dropdown-item" href="disolucion.html">Disolución</a></li>
                         </ul>
                     </li>
 
-                    <!-- Sección 2: Banda & Arte -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Banda & Arte
+                            Banda &amp; Arte
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="integrantes.html">Integrantes</a></li>
                             <li><a class="dropdown-item" href="rocambole.html">Arte de Rocambole</a></li>
                         </ul>
                     </li>
 
-                    <!-- Sección 3: Cultura & Identidad -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Cultura & Identidad
+                            Cultura &amp; Identidad
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
                             <li><a class="dropdown-item" href="identidad.html">Identidad e Influencia</a></li>
                         </ul>
@@ -75,203 +89,227 @@
         </div>
     </nav>
 
-    <!-- Encabezado de la página -->
-    <header class="py-5 bg-black text-center border-bottom border-secondary">
-        <div class="container py-3">
-            <h1 class="display-4 fw-bold text-uppercase text-danger mb-2">Los Años 90: Madurez Sonora y Masividad</h1>
-            <p class="lead text-secondary fs-4 max-w-xl mx-auto">
-                La década del estallido popular, la consagración discográfica en estadios y el fenómeno de las peregrinaciones por el país.
-            </p>
-        </div>
-    </header>
+    <main id="contenido" class="ok-main">
 
-    <!-- Contenido Principal -->
-    <main class="container py-5 flex-grow-1">
-        
-        <!-- Bloque 1: Contexto general de los 90 -->
-        <article class="row align-items-center mb-5 g-4">
-            <div class="col-lg-7">
-                <span class="badge bg-danger mb-2 px-3 py-2 fs-6">1990 - 2000</span>
-                <h2 class="h1 text-light mb-3">El Fenómeno Cultural de los 90</h2>
-                <p class="fs-5 text-light-50">
-                    En la década del 90, Patricio Rey y sus Redonditos de Ricota alcanzaron una escala inédita para la música independiente sudamericana. El crecimiento del público transformó las presentaciones en verdaderas fiestas populares que desbordaron salas y teatros para mudarse a estadios como Huracán, Racing y River Plate.
-                </p>
-                <p class="fs-5 text-secondary">
-                    En medio de la convertibilidad, la hiperinflación inicial y las transformaciones sociales de la época, la banda ofreció un refugio poético y una identidad inquebrantable a través de producciones discográficas cada vez más ambiciosas y complejas.
-                </p>
-            </div>
-            <div class="col-lg-5">
-                <div class="p-3 bg-black border border-secondary rounded text-center">
-                    <img src="assets/img/noventas-estadio.jpg" alt="Recital masivo de los Redondos en los 90" class="img-fluid rounded mb-2 shadow" onerror="this.src='https://via.placeholder.com/500x350/111/dc3545?text=Estadios+y+Recitales+Masivos'">
-                    <small class="text-secondary d-block mt-2">La devoción popular en los estadios durante la década del 90.</small>
+        <!-- PORTADA + EL FENÓMENO CULTURAL DE LOS 90 · solapa base -->
+        <header class="sec ok-hero" data-theme="negro" data-intro data-layer data-hold="40">
+            <!-- TODO: cuando subas una foto de archivo de los 90, agregar aquí:
+                 <img class="ok-hero__bg" src="img/archivo/....jpg" alt="" aria-hidden="true"> -->
+            <div class="ok-hero__dots" aria-hidden="true"></div>
+            <div class="ok-grain" aria-hidden="true"></div>
+            <div class="container-fluid">
+                <h1 class="t-titulo ok-hero__title">
+                    <span class="line"><span class="misreg" data-text="Los 90s" data-typewriter>Los 90s</span></span>
+                </h1>
+
+                <div class="row ok-hero__lead">
+                    <div class="col-lg-7">
+                        <p class="t-lead" data-intro-fade data-typewriter>La consagración masiva: de los estadios colmados a una discografía cada vez más ambiciosa.</p>
+                    </div>
+                </div>
+
+                <div class="row ok-hero__texto">
+                    <div class="col-lg-7">
+                        <span class="ok-kicker">1991 — 1996</span>
+                        <h2 class="t-titulo t-h3 ok-h2" data-reveal>El Fenómeno Cultural de los 90</h2>
+                        <div class="ok-texto" data-reveal data-delay=".25">
+                            <p>En la década del 90, Patricio Rey y sus Redonditos de Ricota alcanzaron una escala inédita para la música independiente sudamericana. El crecimiento del público transformó las presentaciones en verdaderas fiestas populares que desbordaron salas y teatros para mudarse a estadios como Huracán, Racing y River Plate.</p>
+                            <p>En medio de la convertibilidad y las transformaciones sociales de la época, la banda ofreció un refugio poético y una identidad inquebrantable a través de producciones discográficas cada vez más ambiciosas y complejas.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </article>
+        </header>
 
-        <hr class="border-secondary my-5">
-
-        <!-- Cita Destacada 1 -->
-        <section class="bg-black border-start border-4 border-danger p-4 p-md-5 my-5 rounded-end shadow-sm">
-            <blockquote class="blockquote mb-0">
-                <p class="fs-3 italic text-light mb-3">
-                    "Habían encontrado la fórmula de la felicidad en el país de la nada eléctrica, y la escalada parecía no tener fin."
-                </p>
-                <footer class="blockquote-footer text-danger fs-5">Reseña sobre la consolidación musical de Los Redondos</caption>
-            </blockquote>
+        <!-- CITA · rojo · solapa · typewriter en loop -->
+        <section class="sec ok-sec ok-solapa" data-theme="rojo" data-layer data-hold="40">
+            <div class="container-fluid">
+                <blockquote class="ok-cita" data-reveal>
+                    <p class="t-titulo ok-cita__txt ok-cita__txt--loop" data-typewriter-loop>"Habían encontrado la fórmula de la felicidad en el país de la nada eléctrica, y la escalada parecía no tener fin."</p>
+                    <footer class="t-lead">Reseña sobre la consolidación musical de Los Redondos</footer>
+                </blockquote>
+            </div>
         </section>
 
-        <!-- Bloque 2: Recorrido por la Discografía de la Década -->
-        <section class="mb-5">
-            <h2 class="h2 text-center text-uppercase text-danger mb-5">Recorrido por los Álbumes de los 90</h2>
-            
-            <!-- Disco 1: La Mosca y la Sopa (1991) -->
-            <article class="row align-items-center mb-5 g-4">
-                <div class="col-md-4">
-                    <div class="p-3 bg-black border border-secondary rounded text-center">
-                        <img src="assets/img/disco-la-mosca.jpg" alt="Tapa de La mosca y la sopa (1991)" class="img-fluid rounded shadow" onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=La+Mosca+y+la+Sopa+(1991)'">
-                        <small class="text-secondary d-block mt-2">Portada de Rocambole (1991)</small>
+        <!-- LA ESCALA DE LA MASIVIDAD · negro · 100vh -->
+        <section class="sec ok-sonidos" data-theme="negro" data-layer data-hold="24">
+            <div class="container-fluid">
+                <div class="row g-0">
+                    <div class="col-lg-6 ok-sonidos__col pe-lg-5">
+                        <h2 class="t-titulo ok-sonidos__title" data-slide="left">La Escala de la Masividad</h2>
+                    </div>
+                    <div class="col-lg-6 ok-sonidos__col ps-lg-5">
+                        <div class="ok-sonidos__stack">
+                            <div class="ok-flip" data-flip tabindex="0">
+                                <div class="ok-flip__inner">
+                                    <div class="ok-flip__face ok-flip__front">
+                                        <h3 class="t-titulo ok-h3">De los Clubes a los Estadios</h3>
+                                        <p>Lo que empezó en pubs y teatros terminó colmando Huracán, Racing y River Plate. La demanda de entradas obligó a multiplicar fechas y a pensar cada show como un operativo de escala inédita para una banda sin sello ni auspiciantes.</p>
+                                    </div>
+                                    <div class="ok-flip__face ok-flip__back trama-negra" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                            <div class="ok-flip" data-flip tabindex="0">
+                                <div class="ok-flip__inner">
+                                    <div class="ok-flip__face ok-flip__front">
+                                        <h3 class="t-titulo ok-h3">La Fama sin Medios</h3>
+                                        <p>Vendían discos de oro y agotaban estadios sin pasar por radio ni televisión. Esa ausencia deliberada se volvió, paradójicamente, un tema de cobertura constante: la prensa escribía sobre el fenómeno que se negaba a dejarse cubrir.</p>
+                                    </div>
+                                    <div class="ok-flip__face ok-flip__back trama-negra" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span class="badge bg-outline-danger border border-danger text-danger mb-2">1991</span>
-                    <h3 class="h2 text-light">La Mosca y la Sopa</h3>
-                    <p class="fs-5 text-light-50">
-                        Uno de los discos más exitosos y masivos de la historia del rock nacional. Lanzado en pleno auge del grupo, incluye himnos absolutos como <em>"Mi perro dinamita"</em>, <em>"Un ángel para tu soledad"</em> y <em>"Salando las heridas"</em>.
-                    </p>
-                    <p class="fs-5 text-secondary">
-                        La gráfica de Rocambole inmortalizó la imagen del gato con la boca abierta y la olla popular, convirtiéndose en una remera infaltable en el vestuario ricotero.
-                    </p>
-                </div>
-            </article>
-
-            <hr class="border-secondary my-4">
-
-            <!-- Disco 2: Lobo Suelto / Cordero Atado (1993) -->
-            <article class="row align-items-center mb-5 g-4 flex-row-reverse">
-                <div class="col-md-4">
-                    <div class="p-3 bg-black border border-secondary rounded text-center">
-                        <img src="assets/img/disco-lobo-cordero.jpg" alt="Tapa de Lobo Suelto / Cordero Atado (1993)" class="img-fluid rounded shadow" onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=Lobo+Suelto+/+Cordero+Atado+(1993)'">
-                        <small class="text-secondary d-block mt-2">Álbum Doble (1993)</small>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <span class="badge bg-outline-danger border border-danger text-danger mb-2">1993</span>
-                    <h3 class="h2 text-light">Lobo Suelto / Cordero Atado</h3>
-                    <p class="fs-5 text-light-50">
-                        Un ambicioso proyecto conceptual editado por separado como dos volúmenes en simultáneo. Explora la dualidad a través de los personajes ficticios de *Lupus* (el lobo) y *Rulo* (el cordero).
-                    </p>
-                    <p class="fs-5 text-secondary">
-                        Álbumes repletos de contrastes entre el rock directo, el swing y las baladas intensas con canciones memorables como <em>"Buenas noticias"</em>, <em>"Yo caníbal"</em>, <em>"Etiqueta negra"</em> y <em>"Espejismo"</em>.
-                    </p>
-                </div>
-            </article>
-
-            <hr class="border-secondary my-4">
-
-            <!-- Disco 3: Luzbelito (1996) -->
-            <article class="row align-items-center mb-5 g-4">
-                <div class="col-md-4">
-                    <div class="p-3 bg-black border border-secondary rounded text-center">
-                        <img src="assets/img/disco-luzbelito.jpg" alt="Tapa de Luzbelito (1996)" class="img-fluid rounded shadow" onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=Luzbelito+(1996)'">
-                        <small class="text-secondary d-block mt-2">Obra Maestra (1996)</small>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <span class="badge bg-outline-danger border border-danger text-danger mb-2">1996</span>
-                    <h3 class="h2 text-light">Luzbelito</h3>
-                    <p class="fs-5 text-light-50">
-                        Una de las obras maestras absolutas de la banda. Grabado entre San Pablo y Buenos Aires, es un álbum denso, oscuro y conceptual centrado en la figura de un diablo infante que refleja las tentaciones y contradicciones del mundo moderno.
-                    </p>
-                    <p class="fs-5 text-secondary">
-                        Contiene temas indispensables como <em>"Juguetes perdidos"</em>, <em>"Luzbelito y las sirenas"</em>, <em>"Cruz diablo!"</em> y <em>"Mariposa Pontiac / Rock del país"</em>.
-                    </p>
-                </div>
-            </article>
-
-            <hr class="border-secondary my-4">
-
-            <!-- Disco 4: Último Bondi a Finisterre (1998) -->
-            <article class="row align-items-center mb-5 g-4 flex-row-reverse">
-                <div class="col-md-4">
-                    <div class="p-3 bg-black border border-secondary rounded text-center">
-                        <img src="assets/img/disco-ultimo-bondi.jpg" alt="Tapa de Último Bondi a Finisterre (1998)" class="img-fluid rounded shadow" onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=Ultimo+Bondi+a+Finisterre+(1998)'">
-                        <small class="text-secondary d-block mt-2">Experimentación Electrónica (1998)</small>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <span class="badge bg-outline-danger border border-danger text-danger mb-2">1998</span>
-                    <h3 class="h2 text-light">Último Bondi a Finisterre</h3>
-                    <p class="fs-5 text-light-50">
-                        Marca el ingreso decisivo del grupo en las tecnologías de samplers, bucles digitales y efectos electrónicos, conviviendo con el sonido clásico de las guitarras de Skay y los caños de Sergio Dawi.
-                    </p>
-                    <p class="fs-5 text-secondary">
-                        Temas destacados como <em>"Gualicho"</em>, <em>"Alien Duce"</em>, <em>"Scaramouche"</em> y <em>"Plegaria para un guerrero"</em> redefinieron la estética musical de Los Redondos antes del cambio de siglo.
-                    </p>
-                </div>
-            </article>
-
-            <hr class="border-secondary my-4">
-
-            <!-- Disco 5: Momo Sampler (2000) -->
-            <article class="row align-items-center mb-5 g-4">
-                <div class="col-md-4">
-                    <div class="p-3 bg-black border border-secondary rounded text-center">
-                        <img src="assets/img/disco-momo-sampler.jpg" alt="Tapa de Momo Sampler (2000)" class="img-fluid rounded shadow" onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=Momo+Sampler+(2000)'">
-                        <small class="text-secondary d-block mt-2">Último Álbum de Estudio (2000)</small>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <span class="badge bg-outline-danger border border-danger text-danger mb-2">2000</span>
-                    <h3 class="h2 text-light">Momo Sampler</h3>
-                    <p class="fs-5 text-light-50">
-                        El noveno y último trabajo discográfico de estudio de Patricio Rey. Un álbum conceptual enfocado en el carnaval, la murga, la impostura y las máscaras urbanas de comienzos del milenio.
-                    </p>
-                    <p class="fs-5 text-secondary">
-                        Presenta una producción minuciosa rica en samplers y textura pesada con canciones icónicas como <em>"Pensando en la aguja"</em>, <em>"Una piba con la remera de Greenpeace"</em>, <em>"Mortadela rancia"</em> y <em>"La murga de los renegados"</em>.
-                    </p>
-                </div>
-            </article>
-
+            </div>
         </section>
 
-        <!-- Bloque 3: Las Convocatorias y la Conferencia en Olavarría -->
-        <article class="row align-items-center mb-5 g-4">
-            <div class="col-lg-7">
-                <span class="badge bg-danger mb-2 px-3 py-2 fs-6">1997 - 2000</span>
-                <h2 class="h1 text-light mb-3">La Mística Federal y las Rutas del País</h2>
-                <p class="fs-5 text-light-50">
-                    A raíz de las dificultades para realizar shows en la Capital Federal, la banda trasladó sus conciertos hacia el interior de la Argentina (Villa María, Mar del Plata, Concordia, Córdoba, Tandil). En agosto de 1997, tras la prohibición del intendente de Olavarría de permitir sus recitales, el grupo dio una histórica conferencia de prensa televisada en vivo para defender su derecho a tocar.
-                </p>
-                <p class="fs-5 text-secondary">
-                    Ese hecho profundizó la comunión con sus seguidores, dando nacimiento a las "masas nómades" que viajaban miles de kilómetros en colectivos, trenes y camiones para cada presentación.
-                </p>
-            </div>
-            <div class="col-lg-5">
-                <div class="p-3 bg-black border border-secondary rounded text-center">
-                    <img src="assets/img/noventas-olavarria.jpg" alt="Conferencia de Prensa en Olavarría 1997" class="img-fluid rounded mb-2 shadow" onerror="this.src='https://via.placeholder.com/500x350/111/dc3545?text=Conferencia+de+Prensa+Olavarria+1997'">
-                    <small class="text-secondary d-block mt-2">La histórica conferencia de prensa en televisión tras la censura en Olavarría.</small>
+        <!-- LA MOSCA Y LA SOPA (1991) · amarillo · solapa -->
+        <section class="sec ok-sec ok-solapa" data-theme="amarillo" data-layer data-hold="60">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-center" data-reveal>
+                    <div class="col-lg-7">
+                        <span class="ok-kicker">1991</span>
+                        <h2 class="t-titulo t-h2 ok-h2 ok-alt">La Mosca y la Sopa</h2>
+                        <div class="ok-texto">
+                            <p>Uno de los discos más exitosos y masivos de la historia del rock nacional. Llegó en pleno auge del grupo con himnos como <em>"Mi perro dinamita"</em>, <em>"Un ángel para tu soledad"</em> y <em>"Salando las heridas"</em>.</p>
+                            <p>La gráfica de Rocambole inmortalizó al gato con la boca abierta y la olla popular, una imagen que terminó en remeras y banderas de todo el país.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-1">
+                        <figure class="ok-fig" data-lens>
+                            <img class="ok-cover" src="img/portadas/lamosca.jpg" alt="Portada de La mosca y la sopa (1991)" loading="lazy">
+                            <div class="ok-lens" aria-hidden="true"></div>
+                            <figcaption>Portada de La mosca y la sopa, obra de Rocambole (1991).</figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
-        </article>
+        </section>
 
-        <!-- Navegación entre páginas -->
-        <div class="d-flex justify-content-between align-items-center py-3">
-            <a href="oktubre.html" class="btn btn-outline-secondary">&larr; Anterior: Oktubre</a>
-            <a href="disolucion.html" class="btn btn-danger">Siguiente: Disolución &rarr;</a>
-        </div>
+        <!-- LOBO SUELTO / CORDERO ATADO (1993) · negro · solapa (invertido) -->
+        <section class="sec ok-sec ok-solapa" data-theme="negro" data-layer data-hold="60">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-center flex-row-reverse" data-reveal>
+                    <div class="col-lg-7 offset-lg-1">
+                        <span class="ok-kicker">1993</span>
+                        <h2 class="t-titulo t-h2 ok-h2 ok-alt">Lobo Suelto / Cordero Atado</h2>
+                        <div class="ok-texto">
+                            <p>Un proyecto conceptual editado como dos volúmenes simultáneos, construidos alrededor de los personajes de Lupus (el lobo) y Rulo (el cordero).</p>
+                            <p>Entre el rock directo, el swing y las baladas, el álbum dejó clásicos como <em>"Buenas noticias"</em>, <em>"Yo caníbal"</em> y <em>"Etiqueta negra"</em>.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <figure class="ok-fig">
+                                    <img class="ok-cover" src="img/portadas/lobosuelto.jpg" alt="Portada de Lobo Suelto (1993)" loading="lazy">
+                                    <figcaption>Lobo Suelto</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-6">
+                                <figure class="ok-fig">
+                                    <img class="ok-cover" src="img/portadas/corderoatado.jpg" alt="Portada de Cordero Atado (1993)" loading="lazy">
+                                    <figcaption>Cordero Atado</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LUZBELITO (1996) · amarillo · solapa -->
+        <section class="sec ok-sec ok-solapa" data-theme="amarillo" data-layer data-hold="60">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-center" data-reveal>
+                    <div class="col-lg-7">
+                        <span class="ok-kicker">1996</span>
+                        <h2 class="t-titulo t-h2 ok-h2 ok-alt">Luzbelito</h2>
+                        <div class="ok-texto">
+                            <p>Grabado entre San Pablo y Buenos Aires, es una de las obras más densas y conceptuales de la banda: un disco oscuro centrado en la figura de un diablo infante.</p>
+                            <p>Contiene temas indispensables como <em>"Juguetes perdidos"</em>, <em>"Luzbelito y las sirenas"</em> y <em>"Mariposa Pontiac / Rock del país"</em>.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-1">
+                        <figure class="ok-fig" data-lens>
+                            <img class="ok-cover" src="img/portadas/luzbelito.jpg" alt="Portada de Luzbelito (1996)" loading="lazy">
+                            <div class="ok-lens" aria-hidden="true"></div>
+                            <figcaption>Portada de Luzbelito (1996).</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CIERRE · negro -->
+        <section class="sec ok-sec ok-cierre" data-theme="negro" aria-label="Navegación entre páginas">
+            <div class="container-fluid">
+                <a href="oktubre.html" class="ok-cierre__link" data-label="Oktubre (1986)">&larr; Anterior: Oktubre</a>
+                <a href="disolucion.html" class="ok-cierre__link ok-cierre__link--next" data-label="Disolución">Siguiente: Disolución &rarr;</a>
+            </div>
+        </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="py-4 bg-black border-top border-secondary text-center text-secondary mt-auto">
-        <div class="container">
-            <p class="mb-1">Informática General 2026 - Cátedra Drelichman</p>
-            <p class="small mb-0">Trabajo Práctico N° 2 | Patricio Rey y sus Redonditos de Ricota</p>
+    <!-- Footer Compartido -->
+    <footer class="sec pie" data-theme="negro" data-layer>
+        <div class="container-fluid">
+            <div class="row gy-4">
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Historia</p>
+                    <ul>
+                        <li><a href="gulp.html">Gulp! (1985)</a></li>
+                        <li><a href="oktubre.html">Oktubre (1986)</a></li>
+                        <li><a href="noventas.html">Los 90s</a></li>
+                        <li><a href="disolucion.html">Disolución</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Banda &amp; Arte</p>
+                    <ul>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                        <li><a href="rocambole.html">Arte de Rocambole</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Cultura &amp; Identidad</p>
+                    <ul>
+                        <li><a href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
+                        <li><a href="identidad.html">Identidad e Influencia</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label" aria-hidden="true">&nbsp;</p>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="creditos.html">Créditos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pie__meta">
+                <div class="row gy-2 align-items-start">
+                    <div class="col-md-5"><p class="mb-1">Informática General 2026 - Cátedra Drelichman</p></div>
+                    <div class="col-md-5"><p class="small mb-0">Trabajo Práctico N° 2 | Sitio Web sobre Patricio Rey y sus Redonditos de Ricota</p></div>
+                    <div class="col-md-2 text-md-end"><button class="pie__top" type="button" data-top>Volver arriba</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie__markbox" data-fit-box aria-hidden="true">
+            <span class="t-display" data-fit>Patricio Rey</span>
         </div>
     </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Animaciones -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+    <script src="java/java.js"></script>
+    <script src="java/ok.js"></script>
 </body>
 </html>
