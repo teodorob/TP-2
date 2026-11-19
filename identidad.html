@@ -116,12 +116,16 @@
         </header>
 
         <!-- BLOQUE 1 · negro · El Crimen de Walter Bulacio -->
-        <section class="sec ok-sec id-articulo" data-theme="negro" data-layer data-hold="80">
+        <section class="sec ok-sec id-articulo id-walter" data-theme="negro" data-layer data-hold="80">
+            <div class="id-walter__bg" aria-hidden="true">
+                <img src="img/identidad/caso_walter.jpg" alt="" loading="lazy">
+            </div>
+            <div class="id-walter__shade" aria-hidden="true"></div>
             <div class="container-fluid">
                 <article class="row gy-5 align-items-center">
                     <div class="col-lg-7" data-slide="left">
                         <span class="ok-kicker">Abril de 1991</span>
-                        <h2 class="t-titulo t-h2 ok-h2">El Crimen de Walter Bulacio</h2>
+                        <h2 class="t-titulo t-h2 ok-h2 id-walter__title">El Crimen de Walter Bulacio</h2>
                         <div class="ok-texto">
                             <p>El 19 de abril de 1991 marcó un punto de no retorno. Durante una presentación en el Estadio Obras, una razzia de la Policía Federal terminó con la detención ilegal de jóvenes que rondaban el lugar sin entrada. Entre ellos estaba Walter Bulacio, un adolescente de 17 años que fue brutalmente golpeado en la comisaría y falleció una semana después.</p>
                             <p>Este trágico suceso partió en dos la historia de Los Redondos y transformó radicalmente la relación entre el público del rocanrol y las fuerzas policiales. El caso Bulacio instauró un reclamo de justicia permanente, convirtiéndose en un emblema de la violencia institucional y moldeando la conciencia social de toda una generación de fanáticos que hizo de los recitales un espacio de resistencia.</p>
@@ -130,7 +134,7 @@
                     <div class="col-lg-4 offset-lg-1" data-slide="right" data-delay=".15">
                         <figure class="ok-fig id-fig">
                             <div class="id-fig__frame trama duotono">
-                                <img src="img/archivo/casoWalter.jpg" alt="Marcha por Walter Bulacio" loading="lazy">
+                                <img src="img/identidad/walter.jpg" alt="Marcha por Walter Bulacio" loading="lazy">
                             </div>
                             <figcaption class="id-fig__cap">El reclamo de justicia por Walter Bulacio se volvió bandera del rock.</figcaption>
                         </figure>
@@ -149,25 +153,19 @@
             </div>
         </section>
 
-        <!-- BLOQUE 2 · negro · La Bandera de la Autogestión (invertido) -->
-        <section class="sec ok-sec id-articulo" data-theme="negro" data-layer data-hold="80">
+        <!-- BLOQUE 2 · negro · La Bandera de la Autogestión -->
+        <section class="sec ok-sec id-articulo id-autogestion" data-theme="negro" data-layer data-hold="80">
             <div class="container-fluid">
-                <article class="row gy-5 align-items-center flex-row-reverse">
-                    <div class="col-lg-7 offset-lg-1" data-slide="right">
-                        <span class="ok-kicker">Filosofía</span>
-                        <h2 class="t-titulo t-h2 ok-h2">La Bandera de la Autogestión</h2>
-                        <div class="ok-texto">
+                <article class="row gy-5 align-items-start">
+                    <div class="col-lg-5" data-slide="left">
+                        <span class="id-autogestion__kicker">Filosofía</span>
+                        <h2 class="t-titulo t-h2 id-autogestion__title">La Bandera de la Autogestión</h2>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1" data-slide="right" data-delay=".15">
+                        <div class="ok-texto id-autogestion__body">
                             <p>Desde sus primeros pasos en los pubs platenses hasta llenar los estadios más grandes del país, Patricio Rey mantuvo una regla inquebrantable: la total independencia artística y comercial. Nunca firmaron contratos con sellos discográficos multinacionales ni auspiciantes corporativos.</p>
                             <p>Bajo la estricta gestión de "La Negra Poli", la banda controlaba toda la cadena de producción: desde la grabación de los discos en estudios elegidos por ellos, pasando por el arte gráfico de Rocambole, hasta la distribución y la organización de los recitales. Este modelo demostró que era posible alcanzar la masividad sin someterse a las imposiciones de la industria.</p>
                         </div>
-                    </div>
-                    <div class="col-lg-4" data-slide="left" data-delay=".15">
-                        <figure class="ok-fig id-fig">
-                            <div class="id-fig__frame trama duotono">
-                                <img src="img/archivo/identidad-independencia.jpg" alt="Discos independientes de Los Redondos" loading="lazy">
-                            </div>
-                            <figcaption class="id-fig__cap">El control absoluto sobre la obra y la producción.</figcaption>
-                        </figure>
                     </div>
                 </article>
             </div>
@@ -191,12 +189,8 @@
                 <div class="tab-content">
                     <!-- Solapa 1: El Fenómeno Barrial -->
                     <div class="tab-pane fade show active" id="panel-barrial" role="tabpanel" aria-labelledby="tab-barrial" tabindex="0">
-                        <div class="row gy-4 align-items-start">
-                            <div class="col-lg-4" data-pane-item>
-                                <span class="id-legado__num" aria-hidden="true">01</span>
-                                <h3 class="t-titulo t-h3">El Fenómeno Barrial</h3>
-                            </div>
-                            <div class="col-lg-7 offset-lg-1" data-pane-item>
+                        <div class="row">
+                            <div class="col-lg-8" data-pane-item>
                                 <div class="ok-texto">
                                     <p>La lírica del Indio Solari, que retrataba a los perdedores, los márgenes de la sociedad y la crudeza de la vida urbana, sumada a la mística de los "trapos" y la pertenencia, pavimentó el camino para la explosión del llamado "rock chabón" o "rock barrial" de finales de los 90. Bandas como La Renga o Los Piojos heredaron y expandieron este modelo de liturgia masiva.</p>
                                 </div>
@@ -206,12 +200,8 @@
 
                     <!-- Solapa 2: Mística y Cripticismo -->
                     <div class="tab-pane fade" id="panel-cripticismo" role="tabpanel" aria-labelledby="tab-cripticismo" tabindex="0">
-                        <div class="row gy-4 align-items-start">
-                            <div class="col-lg-4" data-pane-item>
-                                <span class="id-legado__num" aria-hidden="true">02</span>
-                                <h3 class="t-titulo t-h3">Mística y Cripticismo</h3>
-                            </div>
-                            <div class="col-lg-7 offset-lg-1" data-pane-item>
+                        <div class="row">
+                            <div class="col-lg-8" data-pane-item>
                                 <div class="ok-texto">
                                     <p>A pesar de su enorme masividad, la banda siempre esquivó la televisión, las revistas de farándula y la sobreexposición mediática. La negativa a explicar el significado literal de sus canciones obligó al público a involucrarse activamente en la decodificación de sus mensajes, creando un mito cultural que sigue vibrando en las nuevas generaciones.</p>
                                 </div>
