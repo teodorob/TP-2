@@ -3,38 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Identidad e Influencia | Patricio Rey</title>
-    
-    <!-- Framework CSS (Bootstrap 5 CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="bg-dark text-light d-flex flex-column min-vh-100">
+    <title>Identidad e Influencia | Patricio Rey y sus Redonditos de Ricota</title>
+    <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Navegación Principal -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-danger">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-uppercase text-danger fs-4" href="index.html">
-                Patricio Rey
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Badeen+Display&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Lenis (scroll suave) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.css">
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
+
+    <!-- Cortina de transición -->
+    <div class="curtain" aria-hidden="true">
+        <div class="curtain__layer curtain__layer--rojo"></div>
+        <div class="curtain__layer curtain__layer--negro"><span class="curtain__label">Identidad e Influencia</span></div>
+    </div>
+
+    <!-- Navegación Principal (fija) -->
+    <nav class="navbar navbar-expand-lg fixed-top nav-pr" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-pr__logo" href="index.html" data-label="Inicio">
+                <img src="img/logo.png" alt="Patricio Rey" width="600" height="600">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto fs-6">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Inicio -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
-                    
+
                     <!-- Sección 1: Historia -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Historia
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="gulp.html">Gulp! (1985)</a></li>
                             <li><a class="dropdown-item" href="oktubre.html">Oktubre (1986)</a></li>
                             <li><a class="dropdown-item" href="noventas.html">Los 90s</a></li>
@@ -45,9 +63,9 @@
                     <!-- Sección 2: Banda & Arte -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Banda & Arte
+                            Banda &amp; Arte
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="integrantes.html">Integrantes</a></li>
                             <li><a class="dropdown-item" href="rocambole.html">Arte de Rocambole</a></li>
                         </ul>
@@ -56,14 +74,15 @@
                     <!-- Sección 3: Cultura & Identidad -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Cultura & Identidad
+                            Cultura &amp; Identidad
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
-                            <li><a class="dropdown-item active" href="identidad.html">Identidad e Influencia</a></li>
+                            <li><a class="dropdown-item active" aria-current="page" href="identidad.html">Identidad e Influencia</a></li>
                         </ul>
                     </li>
 
+                    <!-- Páginas del sistema -->
                     <li class="nav-item">
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
@@ -75,121 +94,201 @@
         </div>
     </nav>
 
-    <!-- Encabezado de la página -->
-    <header class="py-5 bg-black text-center border-bottom border-secondary">
-        <div class="container py-3">
-            <h1 class="display-4 fw-bold text-uppercase text-danger mb-2">Identidad, Independencia y Legado</h1>
-            <p class="lead text-secondary fs-4 max-w-xl mx-auto">
-                El impacto social de la autogestión, el quiebre institucional y la influencia imborrable en el rock nacional.
-            </p>
-        </div>
-    </header>
+    <main id="contenido" class="ok-main id-page">
 
-    <!-- Contenido Principal -->
-    <main class="container py-5 flex-grow-1">
-        
-        <!-- Bloque 1: El Caso Bulacio (Movido desde los 90s) -->
-        <article class="row align-items-center mb-5 g-4">
-            <div class="col-lg-7">
-                <span class="badge bg-danger mb-2 px-3 py-2 fs-6">Abril de 1991</span>
-                <h2 class="h1 text-light mb-3">El Crimen de Walter Bulacio</h2>
-                <p class="fs-5 text-light-50">
-                    El 19 de abril de 1991 marcó un punto de no retorno. Durante una presentación en el Estadio Obras, una razzia de la Policía Federal terminó con la detención ilegal de jóvenes que rondaban el lugar sin entrada. Entre ellos estaba Walter Bulacio, un adolescente de 17 años que fue brutalmente golpeado en la comisaría y falleció una semana después.
-                </p>
-                <p class="fs-5 text-secondary">
-                    Este trágico suceso partió en dos la historia de Los Redondos y transformó radicalmente la relación entre el público del rocanrol y las fuerzas policiales. El caso Bulacio instauró un reclamo de justicia permanente, convirtiéndose en un emblema de la violencia institucional y moldeando la conciencia social de toda una generación de fanáticos que hizo de los recitales un espacio de resistencia.
-                </p>
-            </div>
-            <div class="col-lg-5">
-                <div class="p-3 bg-black border border-secondary rounded text-center">
-                    <img src="assets/img/identidad-bulacio.jpg" alt="Marcha por Walter Bulacio" class="img-fluid rounded mb-2 shadow" onerror="this.src='https://via.placeholder.com/450x350/111/dc3545?text=Caso+Walter+Bulacio'">
-                    <small class="text-secondary d-block mt-2">El reclamo de justicia por Walter Bulacio se volvió bandera del rock.</small>
-                </div>
-            </div>
-        </article>
+        <!-- PORTADA · rojo -->
+        <header class="sec hero id-hero" data-theme="rojo" data-intro data-layer data-hold="40">
+            <div class="container-fluid">
+                <h1 class="t-titulo t-h2 id-hero__title">
+                    <span class="line"><span>Identidad,</span></span>
+                    <span class="line"><span>Independencia</span></span>
+                    <span class="line"><span class="misreg" data-text="y Legado">y Legado</span></span>
+                </h1>
 
-        <hr class="border-secondary my-5">
-
-        <!-- Cita Destacada 1 -->
-        <section class="bg-black border-start border-4 border-danger p-4 p-md-5 my-5 rounded-end shadow-sm">
-            <blockquote class="blockquote mb-0">
-                <p class="fs-3 italic text-light mb-3">
-                    "Matar a un rati para vengar a Walter."
-                </p>
-                <footer class="blockquote-footer text-danger fs-5">Consigna popular que resonó en las calles y recitales de los años 90</footer>
-            </blockquote>
-        </section>
-
-        <!-- Bloque 2: La Independencia y la Autogestión -->
-        <article class="row align-items-center mb-5 g-4 flex-row-reverse">
-            <div class="col-lg-7">
-                <span class="badge bg-danger mb-2 px-3 py-2 fs-6">Filosofía</span>
-                <h2 class="h1 text-light mb-3">La Bandera de la Autogestión</h2>
-                <p class="fs-5 text-light-50">
-                    Desde sus primeros pasos en los pubs platenses hasta llenar los estadios más grandes del país, Patricio Rey mantuvo una regla inquebrantable: la total independencia artística y comercial. Nunca firmaron contratos con sellos discográficos multinacionales ni auspiciantes corporativos.
-                </p>
-                <p class="fs-5 text-secondary">
-                    Bajo la estricta gestión de "La Negra Poli", la banda controlaba toda la cadena de producción: desde la grabación de los discos en estudios elegidos por ellos, pasando por el arte gráfico de Rocambole, hasta la distribución y la organización de los recitales. Este modelo demostró que era posible alcanzar la masividad sin someterse a las imposiciones de la industria.
-                </p>
-            </div>
-            <div class="col-lg-5">
-                <div class="p-3 bg-black border border-secondary rounded text-center">
-                    <img src="assets/img/identidad-independencia.jpg" alt="Discos independientes de Los Redondos" class="img-fluid rounded mb-2 shadow" onerror="this.src='https://via.placeholder.com/450x350/111/dc3545?text=Independencia+Discografica'">
-                    <small class="text-secondary d-block mt-2">El control absoluto sobre la obra y la producción.</small>
-                </div>
-            </div>
-        </article>
-
-        <hr class="border-secondary my-5">
-
-        <!-- Bloque 3: El Legado -->
-        <section class="mb-5">
-            <h2 class="h2 text-center text-uppercase text-danger mb-4">El Legado en el Rock Argentino</h2>
-            <div class="row g-4">
-                
-                <div class="col-md-6">
-                    <div class="card bg-black text-light border-secondary h-100 p-3">
-                        <div class="card-body">
-                            <h3 class="h4 card-title text-danger">El Fenómeno Barrial</h3>
-                            <p class="card-text text-secondary">
-                                La lírica del Indio Solari, que retrataba a los perdedores, los márgenes de la sociedad y la crudeza de la vida urbana, sumada a la mística de los "trapos" y la pertenencia, pavimentó el camino para la explosión del llamado "rock chabón" o "rock barrial" de finales de los 90. Bandas como La Renga o Los Piojos heredaron y expandieron este modelo de liturgia masiva.
-                            </p>
+                <div class="hero__meta" data-intro-fade>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <p class="t-lead id-hero__lead">El impacto social de la autogestión, el quiebre institucional y la influencia imborrable en el rock nacional.</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </header>
 
-                <div class="col-md-6">
-                    <div class="card bg-black text-light border-secondary h-100 p-3">
-                        <div class="card-body">
-                            <h3 class="h4 card-title text-danger">Mística y Cripticismo</h3>
-                            <p class="card-text text-secondary">
-                                A pesar de su enorme masividad, la banda siempre esquivó la televisión, las revistas de farándula y la sobreexposición mediática. La negativa a explicar el significado literal de sus canciones obligó al público a involucrarse activamente en la decodificación de sus mensajes, creando un mito cultural que sigue vibrando en las nuevas generaciones.
-                            </p>
+        <!-- BLOQUE 1 · negro · El Crimen de Walter Bulacio -->
+        <section class="sec ok-sec id-articulo" data-theme="negro" data-layer data-hold="80">
+            <div class="container-fluid">
+                <article class="row gy-5 align-items-center">
+                    <div class="col-lg-7" data-slide="left">
+                        <span class="ok-kicker">Abril de 1991</span>
+                        <h2 class="t-titulo t-h2 ok-h2">El Crimen de Walter Bulacio</h2>
+                        <div class="ok-texto">
+                            <p>El 19 de abril de 1991 marcó un punto de no retorno. Durante una presentación en el Estadio Obras, una razzia de la Policía Federal terminó con la detención ilegal de jóvenes que rondaban el lugar sin entrada. Entre ellos estaba Walter Bulacio, un adolescente de 17 años que fue brutalmente golpeado en la comisaría y falleció una semana después.</p>
+                            <p>Este trágico suceso partió en dos la historia de Los Redondos y transformó radicalmente la relación entre el público del rocanrol y las fuerzas policiales. El caso Bulacio instauró un reclamo de justicia permanente, convirtiéndose en un emblema de la violencia institucional y moldeando la conciencia social de toda una generación de fanáticos que hizo de los recitales un espacio de resistencia.</p>
                         </div>
                     </div>
-                </div>
-
+                    <div class="col-lg-4 offset-lg-1" data-slide="right" data-delay=".15">
+                        <figure class="ok-fig id-fig">
+                            <div class="id-fig__frame trama duotono">
+                                <img src="img/archivo/casoWalter.jpg" alt="Marcha por Walter Bulacio" loading="lazy">
+                            </div>
+                            <figcaption class="id-fig__cap">El reclamo de justicia por Walter Bulacio se volvió bandera del rock.</figcaption>
+                        </figure>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <!-- Navegación entre páginas -->
-        <div class="d-flex justify-content-between align-items-center py-3">
-            <a href="fenomeno-misas.html" class="btn btn-outline-secondary">&larr; Anterior: Las Misas Ricoteras</a>
-            <a href="contacto.html" class="btn btn-danger">Siguiente: Contacto &rarr;</a>
-        </div>
+        <!-- CITA DESTACADA · rojo -->
+        <section class="sec ok-sec id-cita" data-theme="rojo" data-layer data-hold="60">
+            <div class="container-fluid">
+                <blockquote class="ok-cita ok-cita--centro" data-slide="left">
+                    <p class="t-titulo ok-cita__txt">"Matar a un rati para vengar a Walter."</p>
+                    <footer class="t-lead mx-auto">Consigna popular que resonó en las calles y recitales de los años 90</footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- BLOQUE 2 · negro · La Bandera de la Autogestión (invertido) -->
+        <section class="sec ok-sec id-articulo" data-theme="negro" data-layer data-hold="80">
+            <div class="container-fluid">
+                <article class="row gy-5 align-items-center flex-row-reverse">
+                    <div class="col-lg-7 offset-lg-1" data-slide="right">
+                        <span class="ok-kicker">Filosofía</span>
+                        <h2 class="t-titulo t-h2 ok-h2">La Bandera de la Autogestión</h2>
+                        <div class="ok-texto">
+                            <p>Desde sus primeros pasos en los pubs platenses hasta llenar los estadios más grandes del país, Patricio Rey mantuvo una regla inquebrantable: la total independencia artística y comercial. Nunca firmaron contratos con sellos discográficos multinacionales ni auspiciantes corporativos.</p>
+                            <p>Bajo la estricta gestión de "La Negra Poli", la banda controlaba toda la cadena de producción: desde la grabación de los discos en estudios elegidos por ellos, pasando por el arte gráfico de Rocambole, hasta la distribución y la organización de los recitales. Este modelo demostró que era posible alcanzar la masividad sin someterse a las imposiciones de la industria.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-slide="left" data-delay=".15">
+                        <figure class="ok-fig id-fig">
+                            <div class="id-fig__frame trama duotono">
+                                <img src="img/archivo/identidad-independencia.jpg" alt="Discos independientes de Los Redondos" loading="lazy">
+                            </div>
+                            <figcaption class="id-fig__cap">El control absoluto sobre la obra y la producción.</figcaption>
+                        </figure>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLOQUE 3 · amarillo · El Legado en el Rock Argentino (solapas interactivas) -->
+        <section class="sec destacadas id-legado" data-theme="amarillo" data-layer data-hold="80">
+            <div class="container-fluid">
+                <h2 class="t-titulo t-h2 id-legado__title" data-slide="left">El Legado en el Rock Argentino</h2>
+
+                <ul class="tabs-pr" role="tablist" data-tabs>
+                    <li role="presentation">
+                        <button class="tabs-pr__btn active" id="tab-barrial" data-bs-toggle="tab" data-bs-target="#panel-barrial" type="button" role="tab" aria-controls="panel-barrial" aria-selected="true">El Fenómeno Barrial</button>
+                    </li>
+                    <li role="presentation">
+                        <button class="tabs-pr__btn" id="tab-cripticismo" data-bs-toggle="tab" data-bs-target="#panel-cripticismo" type="button" role="tab" aria-controls="panel-cripticismo" aria-selected="false" tabindex="-1">Mística y Cripticismo</button>
+                    </li>
+                    <li class="tabs-pr__bar" aria-hidden="true"></li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- Solapa 1: El Fenómeno Barrial -->
+                    <div class="tab-pane fade show active" id="panel-barrial" role="tabpanel" aria-labelledby="tab-barrial" tabindex="0">
+                        <div class="row gy-4 align-items-start">
+                            <div class="col-lg-4" data-pane-item>
+                                <span class="id-legado__num" aria-hidden="true">01</span>
+                                <h3 class="t-titulo t-h3">El Fenómeno Barrial</h3>
+                            </div>
+                            <div class="col-lg-7 offset-lg-1" data-pane-item>
+                                <div class="ok-texto">
+                                    <p>La lírica del Indio Solari, que retrataba a los perdedores, los márgenes de la sociedad y la crudeza de la vida urbana, sumada a la mística de los "trapos" y la pertenencia, pavimentó el camino para la explosión del llamado "rock chabón" o "rock barrial" de finales de los 90. Bandas como La Renga o Los Piojos heredaron y expandieron este modelo de liturgia masiva.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solapa 2: Mística y Cripticismo -->
+                    <div class="tab-pane fade" id="panel-cripticismo" role="tabpanel" aria-labelledby="tab-cripticismo" tabindex="0">
+                        <div class="row gy-4 align-items-start">
+                            <div class="col-lg-4" data-pane-item>
+                                <span class="id-legado__num" aria-hidden="true">02</span>
+                                <h3 class="t-titulo t-h3">Mística y Cripticismo</h3>
+                            </div>
+                            <div class="col-lg-7 offset-lg-1" data-pane-item>
+                                <div class="ok-texto">
+                                    <p>A pesar de su enorme masividad, la banda siempre esquivó la televisión, las revistas de farándula y la sobreexposición mediática. La negativa a explicar el significado literal de sus canciones obligó al público a involucrarse activamente en la decodificación de sus mensajes, creando un mito cultural que sigue vibrando en las nuevas generaciones.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CIERRE · negro · Anterior / Siguiente -->
+        <section class="sec ok-cierre id-cierre" data-theme="negro" data-layer data-hold="40" aria-label="Navegación entre páginas">
+            <div class="container-fluid">
+                <a class="ok-cierre__link" href="fenomeno-misas.html" data-label="Las Misas Ricoteras">&larr; Anterior: Las Misas Ricoteras</a>
+                <a class="ok-cierre__link ok-cierre__link--next" href="contacto.html" data-label="Contacto">Siguiente: Contacto &rarr;</a>
+            </div>
+        </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="py-4 bg-black border-top border-secondary text-center text-secondary mt-auto">
-        <div class="container">
-            <p class="mb-1">Informática General 2026 - Cátedra Drelichman</p>
-            <p class="small mb-0">Trabajo Práctico N° 2 | Patricio Rey y sus Redonditos de Ricota</p>
+    <!-- Footer Compartido -->
+    <footer class="sec pie" data-theme="negro" data-layer>
+        <div class="container-fluid">
+            <div class="row gy-4">
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Historia</p>
+                    <ul>
+                        <li><a href="gulp.html">Gulp! (1985)</a></li>
+                        <li><a href="oktubre.html">Oktubre (1986)</a></li>
+                        <li><a href="noventas.html">Los 90s</a></li>
+                        <li><a href="disolucion.html">Disolución</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Banda &amp; Arte</p>
+                    <ul>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                        <li><a href="rocambole.html">Arte de Rocambole</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Cultura &amp; Identidad</p>
+                    <ul>
+                        <li><a href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
+                        <li><a href="identidad.html">Identidad e Influencia</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label" aria-hidden="true">&nbsp;</p>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="creditos.html">Créditos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pie__meta">
+                <div class="row gy-2 align-items-start">
+                    <div class="col-md-5"><p class="mb-1">Informática General 2026 - Cátedra Drelichman</p></div>
+                    <div class="col-md-5"><p class="small mb-0">Trabajo Práctico N° 2 | Sitio Web sobre Patricio Rey y sus Redonditos de Ricota</p></div>
+                    <div class="col-md-2 text-md-end"><button class="pie__top" type="button" data-top>Volver arriba</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie__markbox" data-fit-box aria-hidden="true">
+            <span class="t-display" data-fit>Patricio Rey</span>
         </div>
     </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Animaciones -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+    <script src="java/java.js"></script>
 </body>
 </html>

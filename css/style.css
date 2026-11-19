@@ -1133,6 +1133,122 @@ img.is-missing { opacity: 0; }
 
 
 /* =========================================================
+   INTEGRANTES (página interna)
+   ========================================================= */
+.int-head { align-items: flex-end; }
+.int-head--tabs { margin-bottom: clamp(3rem, 6vw, 5rem); }
+.int-h2-acc { color: var(--acc); }
+
+/* Bloque 1: Portada */
+.int-hero__title {
+  font-size: clamp(4.25rem, 12vw, 13.5rem);
+  line-height: .92;
+}
+.int-hero__lead {
+  color: var(--crema);
+  font-size: clamp(1.25rem, 1.75vw, 1.65rem);
+  line-height: 1.45;
+  max-width: 44ch;
+}
+
+/* Bloque 2: El Tridente Fundacional */
+.int-tridente__lead {
+  font-weight: 600;
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
+  line-height: 1.55;
+  max-width: 44ch;
+}
+
+/* Bloque 3: La Formación Clásica */
+.int-clasica__title {
+  line-height: 1.03;
+}
+@media (min-width: 992px) {
+  .int-clasica__lead {
+    margin-left: -2rem;
+  }
+}
+
+/* Bloque 4: Músicos Históricos */
+.int-historicos__title {
+  color: var(--negro);
+  text-shadow: .045em .035em 0 var(--amarillo);
+}
+.int-historicos__lead {
+  color: var(--amarillo);
+  font-weight: 600;
+}
+@media (min-width: 992px) {
+  .int-historicos__lead {
+    margin-left: -1.75rem;
+  }
+}
+.int-historicos .hito__title {
+  color: var(--amarillo);
+}
+
+.int-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: calc(var(--nav-h) + 3rem) clamp(6rem, 9vw, 9rem);
+}
+.int-sec > .container-fluid { width: 100%; }
+
+/* Rol: barra de acento + texto chico */
+.sec .int-rol {
+  display: inline-block;
+  margin: 1.25rem 0 1.5rem;
+  padding-top: .6rem;
+  border-top: 4px solid var(--acc);
+  font-size: var(--t-s);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.recorrido .int-rol { border-color: var(--fg); }
+.hito__year + .int-rol { margin: .75rem 0 0; }
+
+.int-txt {
+  max-width: 46ch;
+  font-size: clamp(1.0625rem, 1.25vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.int-txt em { font-style: italic; }
+
+/* Foto de perfil en solapas */
+.int-foto {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.int-foto img { width: 100%; height: 100%; object-fit: cover; }
+.int-foto:hover img { filter: grayscale(0) contrast(1); mix-blend-mode: normal; }
+
+/* Lista editorial: formación clásica */
+.sec .int-lista { margin-top: clamp(3rem, 6vw, 5rem); }
+.int-fila {
+  padding-block: clamp(1.75rem, 3vw, 2.75rem);
+  border-top: 1px solid color-mix(in srgb, var(--fg) 28%, transparent);
+}
+.int-fila:last-child { border-bottom: 1px solid color-mix(in srgb, var(--fg) 28%, transparent); }
+.int-fila .t-h3 { transition: color .8s var(--ease-out); }
+.int-fila:hover .t-h3 { color: var(--acc); }
+.sec .int-fila .int-rol { margin: 1rem 0 0; }
+
+/* Cierre */
+.int-cierre {
+  display: flex;
+  align-items: center;
+  padding-block: clamp(6rem, 10vw, 10rem);
+}
+.int-cierre > .container-fluid { width: 100%; }
+.int-cierre .ok-cierre__link { font-size: clamp(2.25rem, 5vw, 5rem); }
+
+
+
+/* =========================================================
    CRÉDITOS (página interna)
    ========================================================= */
 .cred-hero__title {
@@ -1279,3 +1395,111 @@ img.is-missing { opacity: 0; }
 }
 .cred-cierre > .container-fluid { width: 100%; }
 .cred-cierre .ok-cierre__link { font-size: clamp(2.25rem, 5vw, 5rem); }
+
+
+/* =========================================================
+   IDENTIDAD E INFLUENCIA (página interna)
+   ========================================================= */
+.id-hero__title {
+  font-size: clamp(3.5rem, 11.5vw, 12rem);
+  line-height: .92;
+}
+.id-hero__lead {
+  color: var(--crema);
+  font-size: clamp(1.25rem, 1.75vw, 1.65rem);
+  line-height: 1.45;
+  max-width: 46ch;
+}
+
+.id-articulo {
+  display: flex;
+  align-items: center;
+  padding-block: calc(var(--nav-h) + 3.5rem) clamp(6rem, 9vw, 9rem);
+}
+.id-articulo > .container-fluid { width: 100%; }
+.id-articulo .ok-texto p {
+  max-width: 52ch;
+  color: color-mix(in srgb, var(--fg) 88%, transparent);
+}
+.id-articulo .ok-texto p + p {
+  color: color-mix(in srgb, var(--fg) 72%, transparent);
+}
+
+.id-fig__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  overflow: hidden;
+}
+.id-fig__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 1.2s var(--ease-out), transform 1.6s var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .id-fig:hover .duotono img {
+    filter: grayscale(0) contrast(1);
+    mix-blend-mode: normal;
+    transform: scale(1.03);
+  }
+}
+.id-fig__cap {
+  margin-top: .85rem;
+  font-size: var(--t-s);
+  font-weight: 500;
+  color: color-mix(in srgb, var(--fg) 70%, transparent);
+}
+
+/* Cita destacada */
+.id-cita {
+  min-height: 85svh;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(6rem, 12vw, 10rem);
+}
+.id-cita > .container-fluid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.id-cita .ok-cita__txt {
+  font-size: clamp(2.75rem, 7.5vw, 7.5rem);
+  line-height: .95;
+  color: var(--negro);
+}
+.id-cita footer {
+  color: var(--crema);
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 600;
+  max-width: 44ch;
+}
+
+/* Legado en el Rock Argentino (solapas) */
+.id-legado__title {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  color: var(--negro);
+}
+.id-legado__num {
+  display: inline-block;
+  margin-bottom: .75rem;
+  padding: .25rem .55rem;
+  background: var(--rojo);
+  color: var(--negro);
+  font-family: var(--f-titulo);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1;
+}
+.id-legado .ok-texto p {
+  max-width: 52ch;
+  color: var(--negro);
+}
+
+/* Cierre */
+.id-cierre {
+  display: flex;
+  align-items: center;
+  padding-block: clamp(6rem, 10vw, 10rem);
+}
+.id-cierre > .container-fluid { width: 100%; }
+.id-cierre .ok-cierre__link { font-size: clamp(2.25rem, 5vw, 5rem); }
