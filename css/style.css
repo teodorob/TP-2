@@ -730,7 +730,7 @@ img.is-missing { opacity: 0; }
 .pogo__foot .lnk { margin-top: 1.25rem; font-size: var(--t-l); }
 
 /* Footer */
-.pie { padding-top: clamp(4rem, 8vw, 7rem); overflow: hidden; border-top: 2px solid var(--rojo); }
+.pie { padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); overflow: hidden; border-top: 2px solid var(--rojo); }
 .pie__label {
   margin-bottom: .9rem !important;
   font-size: var(--t-s);
@@ -741,7 +741,7 @@ img.is-missing { opacity: 0; }
 .pie li a { text-decoration: none; font-weight: 500; transition: color .6s var(--ease-out); }
 .pie li a:hover { color: var(--acc); }
 .pie__meta {
-  margin-top: clamp(3rem, 6vw, 5rem);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
   padding-top: 1rem;
   border-top: 1px solid color-mix(in srgb, var(--fg) 28%, transparent);
   font-size: var(--t-s);
@@ -755,7 +755,7 @@ img.is-missing { opacity: 0; }
   cursor: pointer;
 }
 .pie__markbox {
-  margin-top: clamp(2rem, 5vw, 4rem);
+  margin-top: clamp(1rem, 2.5vw, 2rem);
   padding-inline: var(--gutter);
   color: var(--rojo);
   line-height: .78;
@@ -1076,3 +1076,119 @@ img.is-missing { opacity: 0; }
   .ok-cierre .container-fluid { flex-direction: row; justify-content: space-between; align-items: flex-end; }
   .ok-cierre__link--next { text-align: right; }
 }
+
+
+
+/* =========================================================
+   INTEGRANTES (página interna)
+   ========================================================= */
+.int-head { align-items: flex-end; }
+.int-head--tabs { margin-bottom: clamp(3rem, 6vw, 5rem); }
+.int-h2-acc { color: var(--acc); }
+
+/* Bloque 1: Portada */
+.int-hero__title {
+  font-size: clamp(4.25rem, 12vw, 13.5rem);
+  line-height: .92;
+}
+.int-hero__lead {
+  color: var(--crema);
+  font-size: clamp(1.25rem, 1.75vw, 1.65rem);
+  line-height: 1.45;
+  max-width: 44ch;
+}
+
+/* Bloque 2: El Tridente Fundacional */
+.int-tridente__lead {
+  font-weight: 600;
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
+  line-height: 1.55;
+  max-width: 44ch;
+}
+
+/* Bloque 3: La Formación Clásica */
+.int-clasica__title {
+  line-height: 1.03;
+}
+@media (min-width: 992px) {
+  .int-clasica__lead {
+    margin-left: -2rem;
+  }
+}
+
+/* Bloque 4: Músicos Históricos */
+.int-historicos__title {
+  color: var(--negro);
+  text-shadow: .045em .035em 0 var(--amarillo);
+}
+.int-historicos__lead {
+  color: var(--amarillo);
+  font-weight: 600;
+}
+@media (min-width: 992px) {
+  .int-historicos__lead {
+    margin-left: -1.75rem;
+  }
+}
+.int-historicos .hito__title {
+  color: var(--amarillo);
+}
+
+.int-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: calc(var(--nav-h) + 3rem) clamp(6rem, 9vw, 9rem);
+}
+.int-sec > .container-fluid { width: 100%; }
+
+/* Rol: barra de acento + texto chico */
+.sec .int-rol {
+  display: inline-block;
+  margin: 1.25rem 0 1.5rem;
+  padding-top: .6rem;
+  border-top: 4px solid var(--acc);
+  font-size: var(--t-s);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.recorrido .int-rol { border-color: var(--fg); }
+.hito__year + .int-rol { margin: .75rem 0 0; }
+
+.int-txt {
+  max-width: 46ch;
+  font-size: clamp(1.0625rem, 1.25vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.int-txt em { font-style: italic; }
+
+/* Foto de perfil en solapas */
+.int-foto {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.int-foto img { width: 100%; height: 100%; object-fit: cover; }
+.int-foto:hover img { filter: grayscale(0) contrast(1); mix-blend-mode: normal; }
+
+/* Lista editorial: formación clásica */
+.sec .int-lista { margin-top: clamp(3rem, 6vw, 5rem); }
+.int-fila {
+  padding-block: clamp(1.75rem, 3vw, 2.75rem);
+  border-top: 1px solid color-mix(in srgb, var(--fg) 28%, transparent);
+}
+.int-fila:last-child { border-bottom: 1px solid color-mix(in srgb, var(--fg) 28%, transparent); }
+.int-fila .t-h3 { transition: color .8s var(--ease-out); }
+.int-fila:hover .t-h3 { color: var(--acc); }
+.sec .int-fila .int-rol { margin: 1rem 0 0; }
+
+/* Cierre */
+.int-cierre {
+  display: flex;
+  align-items: center;
+  padding-block: clamp(6rem, 10vw, 10rem);
+}
+.int-cierre > .container-fluid { width: 100%; }
+.int-cierre .ok-cierre__link { font-size: clamp(2.25rem, 5vw, 5rem); }
