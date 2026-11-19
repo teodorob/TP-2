@@ -3,165 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etapa 80s: De Gulp! a Oktubre | Patricio Rey</title>
-    
-    <!-- Bootstrap 5 CSS (CDN) -->
+    <title>Gulp! (1985) | Patricio Rey y sus Redonditos de Ricota</title>
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Badeen+Display&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+
+    <!-- Lenis (scroll suave) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.css">
+
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-dark text-light d-flex flex-column min-vh-100">
+<body>
 
-   <!-- Navegación Principal -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-danger">
-    <div class="container">
-        <a class="navbar-brand fw-bold text-uppercase text-danger fs-4" href="index.html">
-            Patricio Rey
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto fs-6">
-                <!-- Inicio -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
-                </li>
-                
-                <!-- Sección 1: Historia -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Historia
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="gulp.html">Gulp! (1985)</a></li>
-                        <li><a class="dropdown-item" href="oktubre.html">Oktubre (1986)</a></li>
-                        <li><a class="dropdown-item" href="noventas.html">Los 90s</a></li>
-                        <li><a class="dropdown-item" href="disolucion.html">Disolución</a></li>
-                    </ul>
-                </li>
+    <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
 
-                <!-- Sección 2: Banda & Arte -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Banda & Arte
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="integrantes.html">Integrantes</a></li>
-                        <li><a class="dropdown-item" href="rocambole.html">Arte de Rocambole</a></li>
-                    </ul>
-                </li>
-
-                <!-- Sección 3: Cultura & Identidad -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Cultura & Identidad
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
-                        <li><a class="dropdown-item" href="identidad.html">Identidad e Influencia</a></li>
-                    </ul>
-                </li>
-
-                <!-- Páginas del sistema -->
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="creditos.html">Créditos</a>
-                </li>
-            </ul>
-        </div>
+    <!-- Cortina de transición -->
+    <div class="curtain" aria-hidden="true">
+        <div class="curtain__layer curtain__layer--rojo"></div>
+        <div class="curtain__layer curtain__layer--negro"><span class="curtain__label">Gulp!</span></div>
     </div>
-</nav>
 
-    <!-- Encabezado de la Página -->
-    <header class="py-5 bg-black text-center border-bottom border-secondary">
-        <div class="container py-3">
-            <h1 class="display-4 fw-bold text-uppercase text-danger mb-2">Los Años 80: De Gulp! a Oktubre</h1>
-            <p class="lead text-secondary fs-4 max-w-xl mx-auto">
-                El origen del mito: del underground en los pubs a la fundación del rock independiente argentino.
-            </p>
-        </div>
-    </header>
+    <!-- Navegación Principal (fija) -->
+    <nav class="navbar navbar-expand-lg fixed-top nav-pr" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-pr__logo" href="index.html" data-label="Inicio">
+                <img src="img/logo.png" alt="Patricio Rey" width="600" height="600">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <!-- Contenido Principal -->
-    <main class="container py-5 flex-grow-1">
-        
-        <!-- Bloque 1: El Antes y El Depósito (1984) -->
-        <article class="row align-items-center mb-5 g-4">
-            <div class="col-lg-7">
-                <span class="badge bg-danger mb-2 px-3 py-2 fs-6">1984 - 1985</span>
-                <h2 class="h1 text-light mb-3">La Clandestinidad en "El Depósito"</h2>
-                <p class="fs-5 text-light-50">
-                    Antes del disco debut, la experiencia ricotera habitaba en el pub <em>El Depósito</em> de San Telmo. En la primavera alfonsinista de 1984, el show no era solo música: era una kermese clandestina donde convivían monologuistas como Enrique Symns, maquilladoras en camarines improvistos y rifas extravagantes en papel de turno de farmacia.
-                </p>
-                <p class="fs-5 text-secondary">
-                    Ahí se gestó la identidad del grupo: una "Cooperativa del Goce" que fusionaba la poética del existencialismo, el underground under porteño y una propuesta teatral irreverente frente al establishment musical de la época.
-                </p>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Historia
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="gulp.html" aria-current="page">Gulp! (1985)</a></li>
+                            <li><a class="dropdown-item" href="oktubre.html">Oktubre (1986)</a></li>
+                            <li><a class="dropdown-item" href="noventas.html">Los 90s</a></li>
+                            <li><a class="dropdown-item" href="disolucion.html">Disolución</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Banda &amp; Arte
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="integrantes.html">Integrantes</a></li>
+                            <li><a class="dropdown-item" href="rocambole.html">Arte de Rocambole</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cultura &amp; Identidad
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
+                            <li><a class="dropdown-item" href="identidad.html">Identidad e Influencia</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="creditos.html">Créditos</a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-lg-5">
-                <div class="p-3 bg-black border border-secondary rounded text-center">
-                    <img src="assets/img/gulp-afiche.jpg" alt="Afiche histórico de Patricio Rey 6 y 17 de Agosto" class="img-fluid rounded mb-2 shadow" onerror="this.src='https://via.placeholder.com/450x550/111/dc3545?text=Afiche+Historico+Rocambole'">
-                    <small class="text-secondary d-block mt-2">Afiches serigrafiados manualmente por Rocambole para los shows de 1984.</small>
+        </div>
+    </nav>
+
+    <main id="contenido" class="ok-main">
+
+        <!-- PORTADA + LA CLANDESTINIDAD EN "EL DEPÓSITO" · solapa base -->
+        <header class="sec ok-hero" data-theme="negro" data-intro data-layer data-hold="40">
+            <img class="ok-hero__bg" src="img/archivo/showColor.jpg" alt="" aria-hidden="true">
+            <div class="ok-hero__dots" aria-hidden="true"></div>
+            <div class="ok-grain" aria-hidden="true"></div>
+            <div class="container-fluid">
+                <h1 class="t-titulo ok-hero__title">
+                    <span class="line"><span class="misreg" data-text="Gulp!" data-typewriter>Gulp!</span></span>
+                    <span class="line"><span data-typewriter>(1985)</span></span>
+                </h1>
+
+                <div class="row ok-hero__lead">
+                    <div class="col-lg-7">
+                        <p class="t-lead" data-intro-fade data-typewriter>El origen del mito: del underground en los pubs a la fundación del rock independiente argentino.</p>
+                    </div>
+                </div>
+
+                <div class="row ok-hero__texto">
+                    <div class="col-lg-7">
+                        <span class="ok-kicker">1984 — 1985</span>
+                        <h2 class="t-titulo t-h3 ok-h2" data-reveal>La Clandestinidad en "El Depósito"</h2>
+                        <div class="ok-texto" data-reveal data-delay=".25">
+                            <p>Antes del disco debut, la experiencia ricotera habitaba en el pub El Depósito de San Telmo. En la primavera alfonsinista de 1984, el show no era solo música: era una kermese clandestina donde convivían monologuistas como Enrique Symns, maquilladoras en camarines improvistos y rifas extravagantes en papel de turno de farmacia.</p>
+                            <p>Ahí se gestó la identidad del grupo: una "Cooperativa del Goce" que fusionaba la poética del existencialismo, el underground under porteño y una propuesta teatral irreverente frente al establishment musical de la época.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </article>
+        </header>
 
-        <hr class="border-secondary my-5">
-
-        <!-- Cita Destacada extraída de la nota -->
-        <section class="bg-black border-start border-4 border-danger p-4 p-md-5 my-5 rounded-end shadow-sm">
-            <blockquote class="blockquote mb-0">
-                <p class="fs-3 italic text-light mb-3">
-                    "Gulp! enfocaba un enemigo estético, biopolítico, intra-rockero: la Gran Bestia Pop, el establishment dentro del anti-establishment."
-                </p>
-                <footer class="blockquote-footer text-danger fs-5">Análisis histórico sobre el debut discográfico de Patricio Rey</footer>
-            </blockquote>
+        <!-- CITA · rojo · solapa · typewriter en loop -->
+        <section class="sec ok-sec ok-solapa" data-theme="rojo" data-layer data-hold="40">
+            <div class="container-fluid">
+                <blockquote class="ok-cita" data-reveal>
+                    <p class="t-titulo ok-cita__txt ok-cita__txt--loop" data-typewriter-loop>"Gulp! enfocaba un enemigo estético, biopolítico, intra-rockero: la Gran Bestia Pop, el establishment dentro del anti-establishment."</p>
+                    <footer class="t-lead">Análisis histórico sobre el debut discográfico de Patricio Rey</footer>
+                </blockquote>
+            </div>
         </section>
 
-        <!-- Bloque 2: Gulp! (1985) -->
-        <article class="row align-items-center mb-5 g-4 flex-row-reverse">
-            <div class="col-lg-7">
-                <span class="badge bg-danger mb-2 px-3 py-2 fs-6">1985</span>
-                <h2 class="h1 text-light mb-3">Gulp! (1985): El Lanzamiento Independiente</h2>
-                <p class="fs-5 text-light-50">
-                    Grabado en los célebres *Estudios Moebio* y financiado de manera autónoma, <strong>Gulp!</strong> irrumpió con un sonido festivo pero cargado de tensión lírica. Canciones como <em>"La bestia pop"</em>, <em>"Superlógico"</em> y <em>"Un unos pocos peligros sensatos"</em> marcaron un quiebre en la escena.
-                </p>
-                <p class="fs-5 text-secondary">
-                    Las tapas del vinilo fueron armadas a mano de forma artesanal por la propia banda y sus allegados, utilizando cartón serigrafiado por Rocambole. Este trabajo manual convirtió cada ejemplar en una pieza única de colección.
-                </p>
-            </div>
-            <div class="col-lg-5">
-                <div class="p-3 bg-black border border-secondary rounded text-center">
-                    <img src="assets/img/gulp-tapa.jpg" alt="Portada del álbum Gulp! (1985)" class="img-fluid rounded mb-2 shadow" onerror="this.src='https://via.placeholder.com/450x450/111/dc3545?text=Portada+Gulp!+(1985)'">
-                    <small class="text-secondary d-block mt-2">Portada original de Gulp! diseñada por Ricardo "Rocambole" Cohen.</small>
+        <!-- EL LANZAMIENTO INDEPENDIENTE · amarillo · solapa -->
+        <section class="sec ok-sec ok-solapa" data-theme="amarillo" data-layer data-hold="60">
+            <div class="container-fluid">
+                <div class="row gy-5 align-items-center flex-row-reverse" data-reveal>
+                    <div class="col-lg-7">
+                        <span class="ok-kicker">1985</span>
+                        <h2 class="t-titulo t-h2 ok-h2 ok-alt">El Lanzamiento Independiente</h2>
+                        <div class="ok-texto">
+                            <p>Grabado en los célebres Estudios Moebio y financiado de manera autónoma, <strong>Gulp!</strong> irrumpió con un sonido festivo pero cargado de tensión lírica. Canciones como <em>"La bestia pop"</em>, <em>"Superlógico"</em> y <em>"Un unos pocos peligros sensatos"</em> marcaron un quiebre en la escena.</p>
+                            <p>Las tapas del vinilo fueron armadas a mano de forma artesanal por la propia banda y sus allegados, utilizando cartón serigrafiado por Rocambole. Este trabajo manual convirtió cada ejemplar en una pieza única de colección.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-1">
+                        <figure class="ok-fig" data-lens>
+                            <img class="ok-cover" src="img/portadas/gulp.jpg" alt="Portada del álbum Gulp! (1985)" loading="lazy">
+                            <div class="ok-lens" aria-hidden="true"></div>
+                            <figcaption>Portada original de Gulp!, diseñada por Ricardo "Rocambole" Cohen.</figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
-        </article>
+        </section>
 
-        <hr class="border-secondary my-5">
-
-        <!-- Navegación entre páginas de la sección -->
-        <div class="d-flex justify-content-between align-items-center py-3">
-            <a href="index.html" class="btn btn-outline-secondary">&larr; Volver a Inicio</a>
-            <a href="oktubre.html" class="btn btn-danger">Siguiente: Oktubre &rarr;</a>
-        </div>
+        <!-- CIERRE · negro -->
+        <section class="sec ok-sec ok-cierre" data-theme="negro" aria-label="Navegación entre páginas">
+            <div class="container-fluid">
+                <a href="index.html" class="ok-cierre__link" data-label="Inicio">&larr; Volver a Inicio</a>
+                <a href="oktubre.html" class="ok-cierre__link ok-cierre__link--next" data-label="Oktubre (1986)">Siguiente: Oktubre &rarr;</a>
+            </div>
+        </section>
 
     </main>
 
     <!-- Footer Compartido -->
-    <footer class="py-4 bg-black border-top border-secondary text-center text-secondary mt-auto">
-        <div class="container">
-            <p class="mb-1">Informática General 2026 - Cátedra Drelichman</p>
-            <p class="small mb-0">Trabajo Práctico N° 2 | Sitio Web sobre Patricio Rey y sus Redonditos de Ricota</p>
+    <footer class="sec pie" data-theme="negro" data-layer>
+        <div class="container-fluid">
+            <div class="row gy-4">
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Historia</p>
+                    <ul>
+                        <li><a href="gulp.html">Gulp! (1985)</a></li>
+                        <li><a href="oktubre.html">Oktubre (1986)</a></li>
+                        <li><a href="noventas.html">Los 90s</a></li>
+                        <li><a href="disolucion.html">Disolución</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Banda &amp; Arte</p>
+                    <ul>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                        <li><a href="rocambole.html">Arte de Rocambole</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label">Cultura &amp; Identidad</p>
+                    <ul>
+                        <li><a href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
+                        <li><a href="identidad.html">Identidad e Influencia</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <p class="pie__label" aria-hidden="true">&nbsp;</p>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="creditos.html">Créditos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pie__meta">
+                <div class="row gy-2 align-items-start">
+                    <div class="col-md-5"><p class="mb-1">Informática General 2026 - Cátedra Drelichman</p></div>
+                    <div class="col-md-5"><p class="small mb-0">Trabajo Práctico N° 2 | Sitio Web sobre Patricio Rey y sus Redonditos de Ricota</p></div>
+                    <div class="col-md-2 text-md-end"><button class="pie__top" type="button" data-top>Volver arriba</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie__markbox" data-fit-box aria-hidden="true">
+            <span class="t-display" data-fit>Patricio Rey</span>
         </div>
     </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <!-- Animaciones -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+    <script src="java/java.js"></script>
+    <script src="java/ok.js"></script>
 </body>
 </html>
