@@ -1,0 +1,58 @@
+/* =========================================================
+   PATRICIO REY Y SUS REDONDITOS DE RICOTA
+   frameworks.css — resets base y overrides de librerías externas
+   Se carga DESPUÉS de Bootstrap y ANTES de styles.css.
+   ========================================================= */
+
+/* Resets base */
+a { color: inherit; }
+img, video { display: block; max-width: 100%; }
+img.is-missing { opacity: 0; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+/* Bootstrap: grid */
+.container-fluid { --bs-gutter-x: calc(var(--gutter) * 2); }
+
+/* Bootstrap: navbar (variables de tema del componente) */
+.nav-pr {
+  --bs-navbar-padding-y: 0;
+  --bs-navbar-color: var(--crema);
+  --bs-navbar-hover-color: var(--amarillo);
+  --bs-navbar-active-color: var(--amarillo);
+  --bs-navbar-nav-link-padding-x: .9rem;
+}
+.nav-pr .navbar-toggler { border: 0; padding: .5rem 0; box-shadow: none; }
+.nav-pr .collapsing { transition: height .7s var(--ease); }
+@media (max-width: 991.98px) {
+  .nav-pr .navbar-collapse { padding-bottom: 1.25rem; }
+}
+
+/* Bootstrap: dropdown (variables de tema del componente) */
+.nav-pr .dropdown-menu {
+  --bs-dropdown-bg: var(--negro);
+  --bs-dropdown-color: var(--crema);
+  --bs-dropdown-border-color: color-mix(in srgb, var(--crema) 18%, transparent);
+  --bs-dropdown-border-radius: 0;
+  --bs-dropdown-link-color: var(--crema);
+  --bs-dropdown-link-hover-color: var(--negro);
+  --bs-dropdown-link-hover-bg: var(--amarillo);
+  --bs-dropdown-link-active-color: var(--negro);
+  --bs-dropdown-link-active-bg: var(--rojo);
+  --bs-dropdown-item-padding-x: 1.1rem;
+  --bs-dropdown-item-padding-y: .6rem;
+}
+
+/* Bootstrap: tabs (componente de Destacadas) */
+.destacadas .tab-pane.fade { transition: opacity .8s var(--ease-out); }
+
+/* Bootstrap: estados de validación de formularios */
+.form-pr__input.is-invalid { border-color: var(--rojo); }
+.form-pr .invalid-feedback { font-size: var(--t-s); font-weight: 600; color: var(--rojo); }
+
+/* Reset de accesibilidad: respeta la preferencia de movimiento reducido del SO/navegador */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}

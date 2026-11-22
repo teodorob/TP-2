@@ -1,6 +1,7 @@
 /* =========================================================
    PATRICIO REY Y SUS REDONDITOS DE RICOTA
-   styles.css — sistema visual global (todas las páginas)
+   styles.css — sistema visual propio (todas las páginas)
+   Se carga DESPUÉS de Bootstrap y de frameworks.css.
    ========================================================= */
 
 /* 1. Tokens ------------------------------------------------ */
@@ -56,12 +57,6 @@ body::after {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 ::selection { background: var(--amarillo); color: var(--negro); }
-a { color: inherit; }
-img, video { display: block; max-width: 100%; }
-img.is-missing { opacity: 0; }
-:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
-
-.container-fluid { --bs-gutter-x: calc(var(--gutter) * 2); }
 
 .sec {
   position: relative;
@@ -206,11 +201,6 @@ img.is-missing { opacity: 0; }
 
 /* 5. Navegación fija --------------------------------------- */
 .nav-pr {
-  --bs-navbar-padding-y: 0;
-  --bs-navbar-color: var(--crema);
-  --bs-navbar-hover-color: var(--amarillo);
-  --bs-navbar-active-color: var(--amarillo);
-  --bs-navbar-nav-link-padding-x: .9rem;
   min-height: var(--nav-h);
   background: var(--negro);
   border-bottom: 2px solid var(--rojo);
@@ -253,17 +243,6 @@ img.is-missing { opacity: 0; }
   transform-origin: left;
 }
 .nav-pr .dropdown-menu {
-  --bs-dropdown-bg: var(--negro);
-  --bs-dropdown-color: var(--crema);
-  --bs-dropdown-border-color: color-mix(in srgb, var(--crema) 18%, transparent);
-  --bs-dropdown-border-radius: 0;
-  --bs-dropdown-link-color: var(--crema);
-  --bs-dropdown-link-hover-color: var(--negro);
-  --bs-dropdown-link-hover-bg: var(--amarillo);
-  --bs-dropdown-link-active-color: var(--negro);
-  --bs-dropdown-link-active-bg: var(--rojo);
-  --bs-dropdown-item-padding-x: 1.1rem;
-  --bs-dropdown-item-padding-y: .6rem;
   margin-top: .5rem;
 }
 .nav-pr .dropdown-menu.show { animation: dd-in .7s var(--ease-out) both; }
@@ -272,10 +251,7 @@ img.is-missing { opacity: 0; }
   from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: none; }
 }
-.nav-pr .navbar-toggler { border: 0; padding: .5rem 0; box-shadow: none; }
-.nav-pr .collapsing { transition: height .7s var(--ease); }
 @media (max-width: 991.98px) {
-  .nav-pr .navbar-collapse { padding-bottom: 1.25rem; }
   .nav-pr .nav-link::before { display: none; }
 }
 
@@ -542,7 +518,6 @@ img.is-missing { opacity: 0; }
   background: var(--acc);
   pointer-events: none;
 }
-.destacadas .tab-pane.fade { transition: opacity .8s var(--ease-out); }
 .pane-item {
   display: block;
   text-decoration: none;
@@ -590,7 +565,7 @@ img.is-missing { opacity: 0; }
   background-repeat: no-repeat;
 }
 .foto > .container-fluid { width: 100%; }
-.foto__h { font-size: clamp(3rem, 9vw, 9rem); line-height: .9; color: var(--rojo); }
+.foto__h { font-size: clamp(3rem, 9vw, 9rem); line-height: .9; color: var(--rojo); text-shadow: 0 0 .06em color-mix(in srgb, var(--crema) 90%, transparent), 0 0 .015em var(--crema); }
 .foto__par { display: block; }
 .foto__linea { display: block; width: max-content; white-space: nowrap; }
 .foto__linea--mini { font-size: .4em; }
@@ -606,7 +581,6 @@ img.is-missing { opacity: 0; }
 @media (min-width: 992px) {
   .foto__nota { margin-bottom: calc(clamp(2.5rem, 5vw, 4.5rem) - 1.25rem); }
 }
-.foto__h { text-shadow: 0 0 .06em color-mix(in srgb, var(--crema) 90%, transparent), 0 0 .015em var(--crema); }
 .foto__nota p { margin-bottom: 1.25rem !important; }
 @media (max-width: 991.98px) {
   .sec.foto {
@@ -618,8 +592,8 @@ img.is-missing { opacity: 0; }
     background-image: url("../img/archivo/poli.jpg");
     background-size: 100% auto;
     background-position: center top;
+    padding-bottom: 3rem;
   }
-  .sec.foto { padding-bottom: 3rem; }
   .foto__h { font-size: clamp(2.25rem, 15vw, 5.5rem); text-shadow: none; }
   .foto__nota { margin-left: 0; margin-top: 2rem; text-shadow: none; }
 }
@@ -766,17 +740,6 @@ img.is-missing { opacity: 0; }
   color: var(--rojo);
   line-height: .78;
 }
-
-/* Movimiento reducido */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
-  }
-}
-
-
-
 
 /* =========================================================
    OKTUBRE (página interna) — reutilizado por todas las páginas internas
@@ -1126,11 +1089,7 @@ img.is-missing { opacity: 0; }
   border-color: var(--rojo);
   background-color: #fff;
 }
-.form-pr__input.is-invalid { border-color: var(--rojo); }
-.form-pr .invalid-feedback { font-size: var(--t-s); font-weight: 600; color: var(--rojo); }
 .form-pr__contador { display: block; color: color-mix(in srgb, var(--fg) 60%, transparent); }
-
-
 
 /* =========================================================
    INTEGRANTES (página interna)
@@ -1245,8 +1204,6 @@ img.is-missing { opacity: 0; }
 }
 .int-cierre > .container-fluid { width: 100%; }
 .int-cierre .ok-cierre__link { font-size: clamp(2.25rem, 5vw, 5rem); }
-
-
 
 /* =========================================================
    CRÉDITOS (página interna)
