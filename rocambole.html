@@ -1,222 +1,493 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arte de Rocambole | Patricio Rey</title>
-    
-    <!-- Framework CSS (Bootstrap 5 CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocambole — Patricio Rey y sus Redonditos de Ricota</title>
+  <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Estilos específicos para la galería -->
-    <style>
-        .gallery-item {
-            cursor: pointer;
-            transition: transform 0.3s ease, filter 0.3s ease;
-            filter: grayscale(40%);
-        }
-        .gallery-item:hover {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-            z-index: 10;
-        }
-    </style>
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Badeen+Display&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Lenis (scroll suave) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.css">
+
+  <!-- CSS Personalizado -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-dark text-light d-flex flex-column min-vh-100">
+<body>
+  <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
 
-    <!-- Navegación Principal -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-danger">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-uppercase text-danger fs-4" href="index.html">
-                Patricio Rey
+  <!-- Cortina de transición -->
+  <div class="curtain" aria-hidden="true">
+    <div class="curtain__layer curtain__layer--rojo"></div>
+    <div class="curtain__layer curtain__layer--negro"><span class="curtain__label">Rocambole</span></div>
+  </div>
+
+  <!-- Navbar fijo -->
+  <nav class="navbar navbar-expand-lg fixed-top nav-pr" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand nav-pr__logo" href="index.html" data-label="Inicio">
+        <img src="img/logo.png" alt="Patricio Rey" width="600" height="600">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Historia
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto fs-6">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
-                    
-                    <!-- Sección 1: Historia -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Historia
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="gulp.html">Gulp! (1985)</a></li>
-                            <li><a class="dropdown-item" href="oktubre.html">Oktubre (1986)</a></li>
-                            <li><a class="dropdown-item" href="noventas.html">Los 90s</a></li>
-                            <li><a class="dropdown-item" href="disolucion.html">Disolución</a></li>
-                        </ul>
-                    </li>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="gulp.html">Gulp! (1985)</a></li>
+              <li><a class="dropdown-item" href="oktubre.html">Oktubre (1986)</a></li>
+              <li><a class="dropdown-item" href="noventas.html">Los 90s</a></li>
+              <li><a class="dropdown-item" href="disolucion.html">Disolución</a></li>
+            </ul>
+          </li>
 
-                    <!-- Sección 2: Banda & Arte -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Banda & Arte
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="integrantes.html">Integrantes</a></li>
-                            <li><a class="dropdown-item active" href="rocambole.html">Arte de Rocambole</a></li>
-                        </ul>
-                    </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Banda &amp; Arte
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="integrantes.html">Integrantes</a></li>
+              <li><a class="dropdown-item active" href="rocambole.html" aria-current="page">Arte de Rocambole</a></li>
+            </ul>
+          </li>
 
-                    <!-- Sección 3: Cultura & Identidad -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Cultura & Identidad
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
-                            <li><a class="dropdown-item" href="identidad.html">Identidad e Influencia</a></li>
-                        </ul>
-                    </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Cultura &amp; Identidad
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
+              <li><a class="dropdown-item" href="identidad.html">Identidad e Influencia</a></li>
+            </ul>
+          </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="creditos.html">Créditos</a>
-                    </li>
-                </ul>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="creditos.html">Créditos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Portada de página -->
+  <header class="sec ok-sec d-flex align-items-center" data-theme="negro" data-intro data-layer data-hold="40" style="padding-top: calc(var(--nav-h) + clamp(3rem, 5vw, 5rem));">
+    <div class="container-fluid">
+      <div class="row gy-5 align-items-center">
+        <div class="col-lg-7">
+          <h1 class="t-titulo m-0" style="font-size: clamp(4.75rem, 13.5vw, 14.5rem); line-height: .88;">
+            <span class="misreg" data-text="ROCAMBOLE" data-typewriter>ROCAMBOLE</span>
+          </h1>
+          <p class="t-lead mt-4" style="font-size: clamp(1.35rem, 2.1vw, 1.95rem); line-height: 1.45; max-width: 44ch;" data-intro-fade>
+            Ricardo Cohen, el artista platense que tradujo la lírica encriptada de Patricio Rey en una iconografía gráfica irrepetible.
+          </p>
         </div>
-    </nav>
+        <div class="col-lg-4 offset-lg-1">
+          <!-- Espacio reservado para agregar imagen de Rocambole -->
+          <figure class="ok-fig trama-negra m-0" style="aspect-ratio: 4/5; border: 2px solid var(--amarillo);">
+            <!-- Reemplazar src="" con la ruta de la foto de Rocambole (ej: src="img/rocambole.jpg") -->
+            <img src="" alt="Retrato de Ricardo Rocambole Cohen" class="w-100 h-100" style="object-fit: cover;">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <!-- Encabezado de la página -->
-    <header class="py-5 bg-black text-center border-bottom border-secondary">
-        <div class="container py-3">
-            <h1 class="display-4 fw-bold text-uppercase text-danger mb-2">El Arte de Rocambole</h1>
-            <p class="lead text-secondary fs-4 max-w-xl mx-auto">
-                Ricardo Cohen: el sexto sabio detrás de la identidad visual de Patricio Rey y sus Redonditos de Ricota.
+  <main id="contenido" class="ok-main">
+    <!-- Bloque 1: Artículo (Texto izquierda / Imagen derecha) -->
+    <section class="sec ok-sec" data-theme="rojo" data-layer data-hold="80">
+      <div class="container-fluid">
+        <div class="row align-items-center gy-5" data-reveal>
+          <div class="col-lg-7">
+            <h2 class="t-titulo t-h2 mb-4" style="color: var(--crema);">DE LA COFRADÍA AL MITO VISUAL</h2>
+            <ul class="d-flex flex-wrap gap-2 mb-4">
+              <li class="px-3 py-1 fw-bold text-uppercase" style="border: 2px solid var(--negro); font-size: var(--t-s);">Aerógrafo y tinta china</li>
+              <li class="px-3 py-1 fw-bold text-uppercase" style="border: 2px solid var(--negro); font-size: var(--t-s);">Cofradía de la Flor Solar</li>
+              <li class="px-3 py-1 fw-bold text-uppercase" style="border: 2px solid var(--negro); font-size: var(--t-s);">Ediciones artesanales</li>
+              <li class="px-3 py-1 fw-bold text-uppercase" style="border: 2px solid var(--negro); font-size: var(--t-s);">Gráfica de culto</li>
+            </ul>
+            <div class="ok-texto">
+              <p style="max-width: 50ch;">
+                Antes de que existiera un solo disco prensado, la identidad visual de Los Redondos ya circulaba en volantes mimeografiados y afiches pegados a mano en las paredes de La Plata. Ricardo Cohen, formado en Bellas Artes y miembro fundador de La Cofradía de la Flor Solar, asumió la dirección artística total del grupo.
+              </p>
+              <p style="max-width: 50ch;">
+                Ante la negativa histórica de la banda a posar para fotografías promocionales, las ilustraciones de Rocambole ocuparon el lugar del retrato oficial y construyeron un lenguaje simbólico propio.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <figure class="ok-fig trama duotono" style="aspect-ratio: 4/5;">
+              <img src="img/archivo/poli.jpg" alt="Archivo histórico del entorno creativo de Patricio Rey" class="w-100 h-100" style="object-fit: cover;" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloque 2: Frase + Cita destacada -->
+    <section class="sec ok-sec" data-theme="negro" data-layer data-hold="60">
+      <div class="container-fluid">
+        <div class="row gy-5" data-reveal>
+          <div class="col-12">
+            <p class="t-titulo m-0" style="color: var(--amarillo); font-size: clamp(3.5rem, 9.2vw, 10rem); line-height: .92;">LA TAPA ES LA CARA DEL DISCO</p>
+          </div>
+          <div class="col-lg-10">
+            <blockquote class="ok-cita m-0">
+              <p class="t-titulo ok-cita__txt ok-cita__txt--loop mb-3" style="color: var(--crema);" data-typewriter-stay>
+                “NO HABÍA FOTOS DE LOS MÚSICOS EN LOS MEDIOS; LA IMAGEN GRÁFICA OCUPABA TODO EL ESPACIO SIMBÓLICO.”
+              </p>
+              <footer class="mt-2">
+                <p class="t-lead m-0" style="color: var(--amarillo);">Ricardo “Rocambole” Cohen, sobre la estética de Patricio Rey.</p>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloque 3: Galería de tapas a color con Modal (3, 3 y 4) -->
+    <section class="sec ok-sec" data-theme="amarillo" data-layer data-hold="150">
+      <div class="container-fluid">
+        <div class="row gy-4 mb-5" data-reveal>
+          <div class="col-lg-8">
+            <h2 class="t-titulo t-h2 ok-h2">DISCOGRAFÍA ILUSTRADA</h2>
+            <p class="t-lead mt-3" style="max-width: 48ch;">
+              Diez tapas concebidas como piezas autónomas, siempre a color. Seleccioná cada portada para ampliar la obra y su ficha técnica.
             </p>
+          </div>
         </div>
-    </header>
 
-    <!-- Contenido Principal -->
-    <main class="container py-5 flex-grow-1">
-        
-        <!-- Bloque 1: Biografía y Estilo -->
-        <article class="row align-items-center mb-5 g-4">
-            <div class="col-lg-7">
-                <span class="badge bg-danger mb-2 px-3 py-2 fs-6">El Mono Cohen</span>
-                <h2 class="h1 text-light mb-3">Las mil vidas del Artista</h2>
-                <p class="fs-5 text-light-50">
-                    Ricardo "Mono" Cohen, conocido por el pseudónimo Rocambole (inspirado en un folletín francés del siglo XIX), es la mente maestra detrás de toda la estética ricotera. Egresado de Bellas Artes en La Plata, forjó su carácter de resistencia cultural desde los años 60, cuando formó la legendaria <em>Cofradía de la Flor Solar</em> y organizó la "facultad paralela" tras la represión de Onganía en 1966.
+        <!-- Fila 1: 3 discos -->
+        <div class="row g-4 g-lg-5 mb-4 mb-lg-5">
+          <div class="col-12 col-md-4" data-reveal>
+            <button type="button" class="btn p-0 border-0 rounded-0 text-start w-100 pane-item" data-bs-toggle="modal" data-bs-target="#modalPortada" data-img="img/portadas/gulp.jpg" data-titulo="GULP! (1985)" data-desc="Aerógrafo sobre cartón y tipografía manual. El debut independiente que inauguró el universo visual de la banda.">
+              <span class="pane-item__img trama mb-2" style="aspect-ratio: 1;">
+                <img src="img/portadas/gulp.jpg" alt="Tapa del disco Gulp!" loading="lazy">
+              </span>
+              <span class="pane-item__title">01. GULP!</span>
+              <span class="d-block small fw-semibold mt-1">1985 · Aerógrafo</span>
+            </button>
+          </div>
+
+          <div class="col-12 col-md-4" data-reveal>
+            <button type="button" class="btn p-0 border-0 rounded-0 text-start w-100 pane-item" data-bs-toggle="modal" data-bs-target="#modalPortada" data-img="img/portadas/oktubre.jpg" data-titulo="OKTUBRE (1986)" data-desc="Contraste extremo en rojo, negro y amarillo inspirado en el constructivismo ruso y las revueltas obreras.">
+              <span class="pane-item__img trama mb-2" style="aspect-ratio: 1;">
+                <img src="img/portadas/oktubre.jpg" alt="Tapa del disco Oktubre" loading="lazy">
+              </span>
+              <span class="pane-item__title">02. OKTUBRE</span>
+              <span class="d-block small fw-semibold mt-1">1986 · Tinta y aerógrafo</span>
+            </button>
+          </div>
+
+          <div class="col-12 col-md-4" data-reveal>
+            <button type="button" class="btn p-0 border-0 rounded-0 text-start w-100 pane-item" data-bs-toggle="modal" data-bs-target="#modalPortada" data-img="img/portadas/unbaion.jpg" data-titulo="UN BAIÓN PARA EL OJO IDIOTA (1988)" data-desc="Sátira sobre la televisión y la mirada pasiva mediante el trazo expresionista y colores saturados.">
+              <span class="pane-item__img trama mb-2" style="aspect-ratio: 1;">
+                <img src="img/portadas/unbaion.jpg" alt="Tapa del disco Un baión para el ojo idiota" loading="lazy">
+              </span>
+              <span class="pane-item__title">03. UN BAIÓN...</span>
+              <span class="d-block small fw-semibold mt-1">1988 · Técnica mixta</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Fila 2: 3 discos -->
+        <div class="row g-4 g-lg-5 mb-4 mb-lg-5">
+          <div class="col-12 col-md-4" data-reveal>
+            <button type="button" class="btn p-0 border-0 rounded-0 text-start w-100 pane-item" data-bs-toggle="modal" data-bs-target="#modalPortada" data-img="img/portadas/bang.jpg" data-titulo="¡BANG! ¡BANG!... ESTÁS LIQUIDADO (1989)" data-desc="Relectura dramática de El tres de mayo de Goya trasladada al lenguaje del cómic negro y la historieta.">
+              <span class="pane-item__img trama mb-2" style="aspect-ratio: 1;">
+                <img src="img/portadas/bang.jpg" alt="Tapa del disco Bang Bang Estás liquidado" loading="lazy">
+              </span>
+              <span class="pane-item__title">04. ¡BANG! ¡BANG!</span>
+              <span class="d-block small fw-semibold mt-1">1989 · Ilustración editorial</span>
+            </button>
+          </div>
+
+          <div class="col-12 col-md-4" data-reveal>
+            <button type="button" class="btn p-0 border-0 rounded-0 text-start w-100 pane-item" data-bs-toggle="modal" data-bs-target="#modalPortada" data-img="img/portadas/lamosca.jpg" data-titulo="LA MOSCA Y LA SOPA (1991)" data-desc="Primer gran trabajo pensado para el formato CD, manteniendo la tensión grotesca y el detalle pictórico.">
+              <span class="pane-item__img trama mb-2" style="aspect-ratio: 1;">
+                <img src="img/portadas/lamosca.jpg" alt="Tapa del disco La mosca y la sopa" loading="lazy">
+              </span>
+              <span class="pane-item__title">05. LA MOSCA Y LA SOPA</span>
+              <span class="d-block small fw-semibold mt-1">1991 · Pintura y aerógrafo</span>
+            </button>
+          </div>
+
+          <div class="col-12 col-md-4" data-reveal>
+            <button type="button" class="btn p-0 border-0 rounded-0 text-start w-100 pane-item" data-bs-toggle="modal" data-bs-target="#modalPortada" data-img="img/portadas/lobosuelto.jpg" data-titulo="LOBO SUELTO, CORDERO ATADO VOL. 1 (1993)" data-desc="Díptico conceptual sobre la dualidad instinto y domesticación, con cajas troqueladas y arte interno desplegable.">
+              <span class="pane-item__img trama mb-2" style="aspect-ratio: 1;">
+                <img src="img/portadas/lobosuelto.jpg" alt="Tapa del disco Lobo suelto" loading="lazy">
+              </span>
+              <span class="pane-item__title">06. LOBO SUELTO</span>
+              <span class="d-block small fw-semibold mt-1">1993 · Díptico Vol. 1</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Fila 3: 4 discos -->
+        <div class="row g-4 g-lg-5">
+          <div class="col-6 col-md-3" data-reveal>
+            <button type="button" class="btn p-0 border-0 rounded-0 text-start w-100 pane-item" data-bs-toggle="modal" data-bs-target="#modalPortada" data-img="img/portadas/corderoatado.jpg" data-titulo="LOBO SUELTO, CORDERO ATADO VOL. 2 (1993)" data-desc="Segunda mitad del álbum doble, completando el relato visual antagónico de las fuerzas en pugna.">
+              <span class="pane-item__img trama mb-2" style="aspect-ratio: 1;">
+                <img src="img/portadas/corderoatado.jpg" alt="Tapa del disco Cordero atado" loading="lazy">
+              </span>
+              <span class="pane-item__title">07. CORDERO ATADO</span>
+              <span class="d-block small fw-semibold mt-1">1993 · Díptico Vol. 2</span>
+            </button>
+          </div>
+
+          <div class="col-6 col-md-3" data-reveal>
+            <button type="button" class="btn p-0 border-0 rounded-0 text-start w-100 pane-item" data-bs-toggle="modal" data-bs-target="#modalPortada" data-img="img/portadas/luzbelito.jpg" data-titulo="LUZBELITO (1996)" data-desc="Edición libro-objeto con estética de grabado antiguo, papel texturado y simbología esotérica.">
+              <span class="pane-item__img trama mb-2" style="aspect-ratio: 1;">
+                <img src="img/portadas/luzbelito.jpg" alt="Tapa del disco Luzbelito" loading="lazy">
+              </span>
+              <span class="pane-item__title">08. LUZBELITO</span>
+              <span class="d-block small fw-semibold mt-1">1996 · Edición libro</span>
+            </button>
+          </div>
+
+          <div class="col-6 col-md-3" data-reveal>
+            <button type="button" class="btn p-0 border-0 rounded-0 text-start w-100 pane-item" data-bs-toggle="modal" data-bs-target="#modalPortada" data-img="img/portadas/ultimobondi.jpg" data-titulo="ÚLTIMO BONDI A FINISTERRE (1998)" data-desc="Irrupción del modelado digital 3D con personajes cibernéticos y packaging metalizado de edición especial.">
+              <span class="pane-item__img trama mb-2" style="aspect-ratio: 1;">
+                <img src="img/portadas/ultimobondi.jpg" alt="Tapa del disco Último bondi a Finisterre" loading="lazy">
+              </span>
+              <span class="pane-item__title">09. ÚLTIMO BONDI...</span>
+              <span class="d-block small fw-semibold mt-1">1998 · Gráfica digital</span>
+            </button>
+          </div>
+
+          <div class="col-6 col-md-3" data-reveal>
+            <button type="button" class="btn p-0 border-0 rounded-0 text-start w-100 pane-item" data-bs-toggle="modal" data-bs-target="#modalPortada" data-img="img/portadas/momosampler.jpg" data-titulo="MOMO SAMPLER (2000)" data-desc="Carnaval oscuro de fin de siglo presentado en formato libro con encuadernación especial y collage digital.">
+              <span class="pane-item__img trama mb-2" style="aspect-ratio: 1;">
+                <img src="img/portadas/momosampler.jpg" alt="Tapa del disco Momo Sampler" loading="lazy">
+              </span>
+              <span class="pane-item__title">10. MOMO SAMPLER</span>
+              <span class="d-block small fw-semibold mt-1">2000 · Libro-objeto</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloque 4: Solapas (data-tabs) -->
+    <section class="sec ok-sec" data-theme="negro" data-layer data-hold="70">
+      <div class="container-fluid">
+        <div class="row gy-4" data-reveal>
+          <div class="col-lg-8">
+            <h2 class="t-titulo t-h2 ok-h2 mb-4">TRES ETAPAS DE TALLER</h2>
+          </div>
+          <div class="col-12" data-tabs>
+            <ul class="tabs-pr flex-lg-nowrap justify-content-lg-between" role="tablist">
+              <li role="presentation">
+                <button type="button" class="tabs-pr__btn active" id="btn-tab-artesanal" data-bs-toggle="tab" data-bs-target="#tab-artesanal" role="tab" aria-controls="tab-artesanal" aria-selected="true" style="font-size: clamp(1.3rem, 2.15vw, 2.25rem); white-space: nowrap;">01. TRAZO Y AERÓGRAFO</button>
+              </li>
+              <li role="presentation">
+                <button type="button" class="tabs-pr__btn" id="btn-tab-emblemas" data-bs-toggle="tab" data-bs-target="#tab-emblemas" role="tab" aria-controls="tab-emblemas" aria-selected="false" style="font-size: clamp(1.3rem, 2.15vw, 2.25rem); white-space: nowrap;">02. EMBLEMAS DE CALLE</button>
+              </li>
+              <li role="presentation">
+                <button type="button" class="tabs-pr__btn" id="btn-tab-digital" data-bs-toggle="tab" data-bs-target="#tab-digital" role="tab" aria-controls="tab-digital" aria-selected="false" style="font-size: clamp(1.3rem, 2.15vw, 2.25rem); white-space: nowrap;">03. LIBRO Y RUPTURA DIGITAL</button>
+              </li>
+              <li class="tabs-pr__bar" aria-hidden="true"></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="tab-artesanal" role="tabpanel" aria-labelledby="btn-tab-artesanal">
+                <p class="mb-3 fw-bold" style="font-size: clamp(1.4rem, 2vw, 1.95rem); color: var(--amarillo); max-width: 52ch;">De Gulp! a La mosca y la sopa (1985–1991)</p>
+                <p style="font-size: clamp(1.2rem, 1.55vw, 1.5rem); line-height: 1.6; max-width: 56ch;">
+                  Originales trabajados sobre cartón ilustración con tinta china, acrílico y aerógrafo. La escala del vinilo de 30 × 30 cm permitía desplegar texturas pictóricas y composiciones que funcionaban como afiches callejeros.
                 </p>
-                <p class="fs-5 text-secondary">
-                    Como cuenta en su libro antológico, sus influencias directas cruzan a los grandes maestros del cómic como Alberto Breccia, la pintura de Goya o El Greco, y el expresionismo de Francis Bacon. Su estilo artesanal, forjado en chorreaduras abstractas y serigrafías independientes, le dio un rostro definitivo al mito de Los Redondos, convirtiéndose en el gran ilustrador del rock nacional.
+              </div>
+              <div class="tab-pane fade" id="tab-emblemas" role="tabpanel" aria-labelledby="btn-tab-emblemas">
+                <p class="mb-3 fw-bold" style="font-size: clamp(1.4rem, 2vw, 1.95rem); color: var(--amarillo); max-width: 52ch;">El puño, las cadenas y el corazón con alas</p>
+                <p style="font-size: clamp(1.2rem, 1.55vw, 1.5rem); line-height: 1.6; max-width: 56ch;">
+                  Símbolos concebidos para las tapas y entradas que el público apropió de inmediato: fueron pintados en banderas de tela, muros barriales y tatuajes mucho antes de existir merchandising oficial.
                 </p>
+              </div>
+              <div class="tab-pane fade" id="tab-digital" role="tabpanel" aria-labelledby="btn-tab-digital">
+                <p class="mb-3 fw-bold" style="font-size: clamp(1.4rem, 2vw, 1.95rem); color: var(--amarillo); max-width: 52ch;">De Luzbelito a Momo Sampler (1996–2000)</p>
+                <p style="font-size: clamp(1.2rem, 1.55vw, 1.5rem); line-height: 1.6; max-width: 56ch;">
+                  Cuando el CD amenazaba con reducir la escala visual, Rocambole transformó el empaque en objeto editorial de colección y experimentó con herramientas digitales 3D sin perder el tono inquietante.
+                </p>
+              </div>
             </div>
-            <div class="col-lg-5">
-                <div class="p-3 bg-black border border-secondary rounded text-center">
-                    <img src="assets/img/rocambole-retrato.jpg" alt="Retrato de Ricardo Rocambole Cohen" class="img-fluid rounded mb-2 shadow" onerror="this.src='https://via.placeholder.com/450x350/111/dc3545?text=Retrato+de+Rocambole'">
-                    <small class="text-secondary d-block mt-2">Ricardo "Rocambole" Cohen, un sabio de la contracultura platense.</small>
-                </div>
-            </div>
-        </article>
-
-        <hr class="border-secondary my-5">
-
-        <!-- Bloque 2: GALERÍA INTERACTIVA (Requisito JS) -->
-        <section class="mb-5">
-            <h2 class="h2 text-center text-uppercase text-danger mb-4">Los Secretos de las Tapas</h2>
-            <p class="text-center text-secondary mb-5">Hacé clic en las imágenes para descubrir la historia oculta detrás de cada obra.</p>
-
-            <div class="row g-4">
-                <!-- Item 1 -->
-                <div class="col-md-4 col-sm-6">
-                    <img src="assets/img/galeria-oktubre.jpg" alt="Tapa Oktubre" class="img-fluid rounded border border-secondary gallery-item" 
-                         data-bs-toggle="modal" data-bs-target="#galleryModal"
-                         data-title="Oktubre (1986)" 
-                         data-description="Nacida en una noche de fernet. El rojo y el negro evocan la Revolución Rusa y el peronismo. Atrás se ve la Catedral de La Plata en llamas. La gente apropió la cadena y el puño para siempre."
-                         onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=Oktubre'">
-                </div>
-                <!-- Item 2 -->
-                <div class="col-md-4 col-sm-6">
-                    <img src="assets/img/galeria-bang.jpg" alt="Tapa Bang Bang" class="img-fluid rounded border border-secondary gallery-item" 
-                         data-bs-toggle="modal" data-bs-target="#galleryModal"
-                         data-title="¡Bang! ¡Bang!... Estás liquidado (1989)" 
-                         data-description="Un homenaje al cuadro 'Los fusilamientos del 3 de mayo' de Goya, pero protagonizado por la Cruz Roja. Rocambole lo conectó con la figura maternal (las Madres) como única resistencia en la dictadura."
-                         onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=Bang+Bang'">
-                </div>
-                <!-- Item 3 -->
-                <div class="col-md-4 col-sm-6">
-                    <img src="assets/img/galeria-mosca.jpg" alt="Tapa La Mosca y la Sopa" class="img-fluid rounded border border-secondary gallery-item" 
-                         data-bs-toggle="modal" data-bs-target="#galleryModal"
-                         data-title="La mosca y la sopa (1991)" 
-                         data-description="Un gato momificado real incrustado en la pintura, aludiendo a los jubilados que comían gatos en Plaza Lavalle, y cerdos como guiño a la revista Cerdos & Peces de Enrique Symns."
-                         onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=La+Mosca+y+la+Sopa'">
-                </div>
-                <!-- Item 4 -->
-                <div class="col-md-4 col-sm-6">
-                    <img src="assets/img/galeria-luzbelito.jpg" alt="Tapa Luzbelito" class="img-fluid rounded border border-secondary gallery-item" 
-                         data-bs-toggle="modal" data-bs-target="#galleryModal"
-                         data-title="Luzbelito (1996)" 
-                         data-description="Inspirado en viejos álbumes de música clásica. El diablo infante fue hecho originalmente de arcilla pura inspirado en la foto de un esclavo, y más tarde el original fue robado de una exposición."
-                         onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=Luzbelito'">
-                </div>
-                <!-- Item 5 -->
-                <div class="col-md-4 col-sm-6">
-                    <img src="assets/img/galeria-baion.jpg" alt="Tapa Un baión" class="img-fluid rounded border border-secondary gallery-item" 
-                         data-bs-toggle="modal" data-bs-target="#galleryModal"
-                         data-title="Un baión para el ojo idiota (1988)" 
-                         data-description="La imagen surgió de una instalación hecha por la propia hija del artista: un muñeco con chupete, collar y antifaz. Luego Rocambole sumó el famoso televisor (el ojo idiota) y un perro."
-                         onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=Un+Baion'">
-                </div>
-                <!-- Item 6 -->
-                <div class="col-md-4 col-sm-6">
-                    <img src="assets/img/galeria-momo.jpg" alt="Tapa Momo Sampler" class="img-fluid rounded border border-secondary gallery-item" 
-                         data-bs-toggle="modal" data-bs-target="#galleryModal"
-                         data-title="Momo Sampler (2000)" 
-                         data-description="Para este álbum, Rocambole diseñó un medallón de 38 gramos de metal fundido en La Plata que podía desprenderse y usarse de escapulario. El concepto general abordaba la 'impostura de la impostura'."
-                         onerror="this.src='https://via.placeholder.com/400x400/111/dc3545?text=Momo+Sampler'">
-                </div>
-            </div>
-        </section>
-
-        <!-- Navegación entre páginas -->
-        <div class="d-flex justify-content-between align-items-center py-3">
-            <a href="integrantes.html" class="btn btn-outline-secondary">&larr; Anterior: Integrantes</a>
-            <a href="fenomeno-misas.html" class="btn btn-danger">Siguiente: Las Misas Ricoteras &rarr;</a>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </main>
-
-    <!-- Modal Dinámico para la Galería (Interactividad JS) -->
-    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-black border-danger">
-                <div class="modal-header border-secondary">
-                    <h5 class="modal-title text-danger fw-bold" id="modalTitle">Título de la Obra</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <img id="modalImage" src="" alt="Imagen Ampliada" class="img-fluid rounded shadow mb-3" style="max-height: 70vh;">
-                    <p id="modalDescription" class="fs-5 text-light-50"></p>
-                </div>
+    <!-- Bloque 5: Artículo invertido (flex-row-reverse) -->
+    <section class="sec ok-sec" data-theme="rojo" data-layer data-hold="70">
+      <div class="container-fluid">
+        <div class="row align-items-center gy-5 flex-row-reverse" data-reveal>
+          <div class="col-lg-7 offset-lg-1">
+            <h2 class="t-titulo t-h2 ok-h2 mb-4" style="color: var(--crema);">ENTRADAS, AFICHES Y OBRA PÚBLICA</h2>
+            <div class="ok-texto">
+              <p style="max-width: 48ch;">
+                El diseño no terminaba en la disquería. Cada recital contaba con entradas numeradas e ilustradas especialmente para evitar falsificaciones, además de gacetillas mimeografiadas y telones escénicos pintados para cada gira.
+              </p>
+              <p style="max-width: 48ch;">
+                Con el correr de las décadas, el archivo gráfico de Rocambole se convirtió en patrimonio visual del rock argentino, exhibido en museos y retrospectivas en todo el país.
+              </p>
             </div>
+          </div>
+          <div class="col-lg-4">
+            <figure class="ok-fig trama duotono" style="aspect-ratio: 4/3;">
+              <img src="img/oktubre-img/wallpaper-oktubre.jpg" alt="Gráfica histórica de época ricotera" class="w-100 h-100" style="object-fit: cover;" loading="lazy">
+            </figure>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Bloque 6: Anterior / Siguiente -->
+    <section class="sec ok-sec ok-cierre" data-theme="negro" aria-label="Navegación entre páginas">
+      <div class="container-fluid">
+        <div>
+          <p class="ok-kicker mb-2">ANTERIOR</p>
+          <a href="noventas.html" class="ok-cierre__link d-block" data-label="NOVENTAS">← NOVENTAS</a>
+        </div>
+        <div class="text-md-end">
+          <p class="ok-kicker mb-2">SIGUIENTE</p>
+          <a href="disolucion.html" class="ok-cierre__link ok-cierre__link--next d-block" data-label="DISOLUCIÓN">DISOLUCIÓN →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Compartido -->
+  <footer class="sec pie" data-theme="negro" data-layer>
+    <div class="container-fluid">
+      <div class="row gy-4">
+        <div class="col-6 col-lg-3">
+          <p class="pie__label">Historia</p>
+          <ul>
+            <li><a href="gulp.html">Gulp! (1985)</a></li>
+            <li><a href="oktubre.html">Oktubre (1986)</a></li>
+            <li><a href="noventas.html">Los 90s</a></li>
+            <li><a href="disolucion.html">Disolución</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <p class="pie__label">Banda &amp; Arte</p>
+          <ul>
+            <li><a href="integrantes.html">Integrantes</a></li>
+            <li><a href="rocambole.html">Arte de Rocambole</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <p class="pie__label">Cultura &amp; Identidad</p>
+          <ul>
+            <li><a href="fenomeno-misas.html">Las Misas Ricoteras</a></li>
+            <li><a href="identidad.html">Identidad e Influencia</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <p class="pie__label" aria-hidden="true">&nbsp;</p>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="creditos.html">Créditos</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pie__meta">
+        <div class="row gy-2 align-items-start">
+          <div class="col-md-5"><p class="mb-1">Informática General 2026 - Cátedra Drelichman</p></div>
+          <div class="col-md-5"><p class="small mb-0">Trabajo Práctico N° 2 | Sitio Web sobre Patricio Rey y sus Redonditos de Ricota</p></div>
+          <div class="col-md-2 text-md-end"><button class="pie__top" type="button" data-top>Volver arriba</button></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="py-4 bg-black border-top border-secondary text-center text-secondary mt-auto">
-        <div class="container">
-            <p class="mb-1">Informática General 2026 - Cátedra Drelichman</p>
-            <p class="small mb-0">Trabajo Práctico N° 2 | Patricio Rey y sus Redonditos de Ricota</p>
-        </div>
-    </footer>
+    <div class="pie__markbox" data-fit-box aria-hidden="true">
+      <span class="t-display" data-fit>Patricio Rey</span>
+    </div>
+  </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Script Principal y Galería -->
-    <script src="java/java.js"></script>
+  <!-- Modal para ampliar tapas a color -->
+  <div class="modal fade" id="modalPortada" tabindex="-1" aria-labelledby="modalPortadaTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-0 border-0" style="background-color: var(--negro); color: var(--crema);">
+        <div class="modal-header border-0">
+          <h3 class="t-titulo t-h3 m-0" id="modalPortadaTitulo" style="color: var(--amarillo);"></h3>
+          <button type="button" class="btn-close btn-close-white rounded-0" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gy-4 align-items-center">
+            <div class="col-md-6">
+              <div class="trama-negra" style="aspect-ratio: 1;">
+                <img src="" alt="" id="modalPortadaImg" class="w-100 h-100" style="object-fit: cover;">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p id="modalPortadaDesc" style="max-width: 44ch;"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Animaciones -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+  <script src="java/java.js"></script>
+  <script src="java/ok.js"></script>
+  <script>
+    const modalPortada = document.getElementById('modalPortada');
+    if (modalPortada) {
+      modalPortada.addEventListener('show.bs.modal', (e) => {
+        const btn = e.relatedTarget;
+        document.getElementById('modalPortadaTitulo').textContent = btn.getAttribute('data-titulo');
+        const img = document.getElementById('modalPortadaImg');
+        img.src = btn.getAttribute('data-img');
+        img.alt = btn.getAttribute('data-titulo');
+        document.getElementById('modalPortadaDesc').textContent = btn.getAttribute('data-desc');
+      });
+    }
+
+    // Efecto máquina de escribir permanente al entrar en pantalla
+    document.querySelectorAll('[data-typewriter-stay]').forEach((el) => {
+      const fullText = el.textContent.trim();
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      el.textContent = '';
+      let started = false;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !started) {
+            started = true;
+            let i = 0;
+            const timer = setInterval(() => {
+              i++;
+              el.textContent = fullText.slice(0, i);
+              if (i >= fullText.length) clearInterval(timer);
+            }, 34);
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.35 });
+      io.observe(el);
+    });
+  </script>
 </body>
 </html>
